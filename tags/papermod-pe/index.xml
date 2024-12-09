@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Papermod-Pe on ximplez</title>
+    <link>https://ximplez.github.io/tags/papermod-pe/</link>
+    <description>Recent content in Papermod-Pe on ximplez</description>
+    <image>
+      <title>ximplez</title>
+      <url>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 06 Dec 2024 13:56:11 +0800</lastBuildDate>
+    <atom:link href="https://ximplez.github.io/tags/papermod-pe/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo博客 Log-1</title>
+      <link>https://ximplez.github.io/topics/operates/build-gh-pages-1/</link>
+      <pubDate>Fri, 29 Nov 2024 16:47:33 +0800</pubDate>
+      <guid>https://ximplez.github.io/topics/operates/build-gh-pages-1/</guid>
+      <description>博客主题优化记录</description>
+      <content:encoded><![CDATA[<h1 id="简介">简介</h1>
+<p>本站使用Hugo搭建，主题fork了<a href="https://github.com/tofuwine/PaperMod-PE" target="_blank"
+   rel="noopener nofollow noreferrer" >PaperMod-PE<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a> (Forked from <a href="https://github.com/adityatelange/hugo-PaperMod" target="_blank"
+   rel="noopener nofollow noreferrer" >Hugo-PaperMod<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a>)， 是本站基于 PaperMod 主题修改后的开源版本。作者博客：<a href="https://www.tofuwine.cn" target="_blank"
+   rel="noopener nofollow noreferrer" >Tofuwine<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></p>
+<p>最后本站主题开源地址：</p>
+
+
+
+
+    
+    
+    
+    
+    
+
+
+
+<div class="pe-git github">
+    <div class="pe-git-platform">
+        <div class="pe-loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="pe-git-info">
+        <div class="pe-git-repo-name">
+            ximplez/PaperMod-PE
+        </div>
+        <div class="pe-git-description"></div>
+        <div class="pe-git-extend">
+            <span class="pe-git-language"></span>
+            <div class="pe-git-count"></div>
+        </div>
+    </div>
+</div>
+
+<blockquote>
+<p>站点源码不开放主要是因为有部分个人信息不方便开源</p>
+</blockquote>
+<h2 id="优化左侧目录">优化左侧目录</h2>
+<p>原作者主题的左侧目录不能自适应屏幕宽度，当屏幕宽度过窄，目录就会被切出屏幕，且无法横向滑动屏幕来展示目录，体验不太好，因此参考<a href="https://github.com/JannikArndt/jannikarndt.github.io/commit/8b99f6cbc61c6b4f0238c592d5315cefe07c0599" target="_blank"
+   rel="noopener nofollow noreferrer" >toc优化<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a>进行了魔改，融合两个目录的特点，实现自适应屏幕和样式优化。</p>
+<h2 id="shortcode">Shortcode</h2>
+
+
+
+
+
+<div class="pe-tip warning">
+    记得在双括号内加 <code>&lt; &gt;</code>括起，否则不生效，以下代码块中无法加，否则会被渲染
+</div>
+
+<h3 id="引用">引用</h3>
+
+  
+  
+    
+      
+        <link rel="stylesheet" href="/css/style.min.fcd1e42510a012b60b7e1a476a3eeb05e37fb96bb54b3a4c236d5b37b0107791.css" integrity="sha256-/NHkJRCgErYLfhpHaj7rBeN/uWu1SzpMI21bN7AQd5E=" crossorigin="anonymous">
+      
+    
+  
+
+<blockquote class="quote">
+        <p>十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。</p></blockquote> 
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{quote}}
+</span></span><span class="line"><span class="cl">十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+</span></span><span class="line"><span class="cl">{{/quote}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="admonition提示">admonition提示</h3>
+<h4 id="success">success</h4>
+<div class="pe-details admonition success open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-check-circle fa-fw"
+           aria-hidden="true"></i>success<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - success</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{admonition type=success title=success open=true}}
+</span></span><span class="line"><span class="cl">admonition - success
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="note">note</h4>
+<div class="pe-details admonition note open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-pencil-alt fa-fw"
+           aria-hidden="true"></i>note<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - note</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{admonition type=note title=note open=true}}
+</span></span><span class="line"><span class="cl">admonition - note
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="abstract">abstract</h4>
+<div class="pe-details admonition abstract open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-list-ul fa-fw"
+           aria-hidden="true"></i>abstract<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - abstract</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=abstract title=abstract open=true }}
+</span></span><span class="line"><span class="cl">admonition - abstract
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="info">info</h4>
+<div class="pe-details admonition info open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-info-circle fa-fw"
+           aria-hidden="true"></i>info<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - info</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=info title=info open=true }}
+</span></span><span class="line"><span class="cl">admonition - info
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="tip">tip</h4>
+<div class="pe-details admonition tip open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-lightbulb fa-fw"
+           aria-hidden="true"></i>tip<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - tip</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=tip title=tip open=true }}
+</span></span><span class="line"><span class="cl">admonition - tip
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="question">question</h4>
+<div class="pe-details admonition question open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-question-circle fa-fw"
+           aria-hidden="true"></i>question<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - question</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=question title=question open=true }}
+</span></span><span class="line"><span class="cl">admonition - question
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="warning">warning</h4>
+<div class="pe-details admonition warning open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-exclamation-triangle fa-fw"
+           aria-hidden="true"></i>warning<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - warning</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=warning title=warning open=true }}
+</span></span><span class="line"><span class="cl">admonition - warning
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="failure">failure</h4>
+<div class="pe-details admonition failure open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-times-circle fa-fw"
+           aria-hidden="true"></i>failure<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - failure</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=failure title=failure open=true }}
+</span></span><span class="line"><span class="cl">admonition - failure
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="danger">danger</h4>
+<div class="pe-details admonition danger open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-skull-crossbones fa-fw"
+           aria-hidden="true"></i>danger<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - danger</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=danger title=danger open=true }}
+</span></span><span class="line"><span class="cl">admonition - danger
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="bug">bug</h4>
+<div class="pe-details admonition bug open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-bug fa-fw"
+           aria-hidden="true"></i>bug<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - bug</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=bug title=bug open=true }}
+</span></span><span class="line"><span class="cl">admonition - bug
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="example">example</h4>
+<div class="pe-details admonition example open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-list-ol fa-fw"
+           aria-hidden="true"></i>example<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - example</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=example title=example open=true }}
+</span></span><span class="line"><span class="cl">admonition - example
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="quote">quote</h4>
+<div class="pe-details admonition quote open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-quote-right fa-fw"
+           aria-hidden="true"></i>quote<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - quote</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=quote title=quote open=true }}
+</span></span><span class="line"><span class="cl">admonition - quote
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h3 id="tip提示">tip提示</h3>
+<h4 id="info-1">info</h4>
+
+
+
+
+
+<div class="pe-tip ">
+    <p>tip content</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{tip}}
+</span></span><span class="line"><span class="cl">tip content
+</span></span><span class="line"><span class="cl">{{/tip}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</div>
+
+<h4 id="warning-1">warning</h4>
+
+
+
+
+
+<div class="pe-tip warning">
+    <p>tip content</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{tip warning}}
+</span></span><span class="line"><span class="cl">tip content
+</span></span><span class="line"><span class="cl">{{/tip}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</div>
+
+<h3 id="badge徽章">badge徽章</h3>
+
+
+
+
+
+
+
+
+<span class="pe-badge">
+    <span class="pe-badge-key">
+        PaperMod-PE
+    </span>
+    <span class="pe-badge-value">
+        v1.0.4
+    </span>
+</span>
+
+
+
+
+
+
+
+
+
+<span class="pe-badge">
+    <span class="pe-badge-key">
+        ximplez
+    </span>
+    <span class="pe-badge-value">
+        building
+    </span>
+</span>
+
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ badge &#34;PaperMod-PE&#34; &#34;v1.0.4&#34; }}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
