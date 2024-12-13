@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Go on ximplez</title>
+    <link>https://ximplez.github.io/tags/go/</link>
+    <description>Recent content in Go on ximplez</description>
+    <image>
+      <title>ximplez</title>
+      <url>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 03 Dec 2024 11:06:08 +0800</lastBuildDate>
+    <atom:link href="https://ximplez.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go发布module</title>
+      <link>https://ximplez.github.io/topics/notes/go_post_module/</link>
+      <pubDate>Fri, 26 Jan 2024 15:18:05 +0800</pubDate>
+      <guid>https://ximplez.github.io/topics/notes/go_post_module/</guid>
+      <description>go发布module</description>
+      <content:encoded><![CDATA[<p><strong>github</strong> 手动release发布：<a href="https://juejin.cn/post/6987205491315179533" target="_blank"
+   rel="noopener nofollow noreferrer" >掘金<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

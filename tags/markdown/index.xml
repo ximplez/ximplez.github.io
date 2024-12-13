@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Markdown on ximplez</title>
+    <link>https://ximplez.github.io/tags/markdown/</link>
+    <description>Recent content in Markdown on ximplez</description>
+    <image>
+      <title>ximplez</title>
+      <url>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 06 Dec 2024 11:42:49 +0800</lastBuildDate>
+    <atom:link href="https://ximplez.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown语法全攻略</title>
+      <link>https://ximplez.github.io/topics/notes/markdown/</link>
+      <pubDate>Tue, 03 Dec 2024 11:00:25 +0800</pubDate>
+      <guid>https://ximplez.github.io/topics/notes/markdown/</guid>
+      <description>Markdown语法全攻略</description>
+      <content:encoded><![CDATA[<h1 id="markdown-语法全攻略">Markdown 语法全攻略</h1>
+<p>Markdown 是一种轻量级标记语言，它以简洁、易读易写的特点受到了广大开发者和写作者的喜爱。本文将详细介绍 Markdown 的各种语法，包括标题、段落、列表、链接、图片、代码块等，并结合具体场景和示例进行展示。</p>
+<h2 id="一标题">一、标题</h2>
+<p>Markdown 支持六级标题，分别用<code>#</code>的数量表示不同级别。</p>
+<ul>
+<li><code>#</code>一级标题</li>
+<li><code>##</code>二级标题</li>
+<li><code>###</code>三级标题</li>
+<li>以此类推，最多到六级标题。</li>
+</ul>
+<p>示例:</p>
+<ul>
+<li>一级标题：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"># 这是一级标题</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ul>
+<li>二级标题：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">## 这是二级标题</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ul>
+<li>三级标题：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">### 这是三级标题</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="二段落">二、段落</h2>
+<h3 id="语法介绍">语法介绍</h3>
+<p>段落之间用一个空行隔开。</p>
+<h3 id="用法介绍">用法介绍</h3>
+<p>直接输入文本即可创建段落。</p>
+<h3 id="具体示例及对应-markdown-代码">具体示例及对应 Markdown 代码</h3>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">这是第一个段落。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这是第二个段落。</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="三列表">三、列表</h2>
+<h3 id="1-无序列表">1. 无序列表</h3>
+<ul>
+<li>语法介绍：使用<code>-</code>、<code>*</code>或<code>+</code>作为无序列表的标记。</li>
+<li>用法介绍：在标记后加上一个空格，然后输入列表项内容。</li>
+<li>具体示例及对应 Markdown 代码：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">-</span> 列表项 1
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 列表项 2
+</span></span><span class="line"><span class="cl">- 列表项 3</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>也可以使用<code>*</code>或<code>+</code>：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">*</span> 列表项 1
+</span></span><span class="line"><span class="cl"><span class="k">*</span> 列表项 2
+</span></span><span class="line"><span class="cl">* 列表项 3</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">+ 列表项 1
+</span></span><span class="line"><span class="cl">+ 列表项 2
+</span></span><span class="line"><span class="cl">+ 列表项 3</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="2-有序列表">2. 有序列表</h3>
+<ul>
+<li>语法介绍：使用数字加英文句号作为有序列表的标记。</li>
+<li>用法介绍：数字后面加上一个英文句号和一个空格，然后输入列表项内容。列表项会自动按数字顺序排列。</li>
+<li>具体示例及对应 Markdown 代码：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">1.</span> 列表项 1
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> 列表项 2
+</span></span><span class="line"><span class="cl">3. 列表项 3</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="四链接">四、链接</h2>
+<h3 id="语法介绍-1">语法介绍</h3>
+<p>链接的语法为<code>[链接文本](链接地址)</code>。</p>
+<h3 id="用法介绍-1">用法介绍</h3>
+<ul>
+<li>可以直接使用 URL 作为链接地址。</li>
+<li>也可以使用相对路径或绝对路径指向本地文件或其他资源。</li>
+</ul>
+<h3 id="具体示例及对应-markdown-代码-1">具体示例及对应 Markdown 代码</h3>
+<ul>
+<li>链接到网页：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">[<span class="nt">百度</span>](<span class="na">https://www.baidu.com</span>)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ul>
+<li>链接到本地文件（相对路径）：
+假设在当前目录下有一个名为<code>document.pdf</code>的文件，可以这样链接：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">[<span class="nt">文档</span>](<span class="na">document.pdf</span>)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="五图片">五、图片</h2>
+<h3 id="语法介绍-2">语法介绍</h3>
+<p>图片的语法为<code>![图片替代文本](图片地址)</code>。</p>
+<h3 id="用法介绍-2">用法介绍</h3>
+<ul>
+<li>图片替代文本在图片无法加载时显示，也有助于提高可访问性。</li>
+<li>图片地址可以是本地文件路径或网络 URL。</li>
+</ul>
+<h3 id="具体示例及对应-markdown-代码-2">具体示例及对应 Markdown 代码</h3>
+<ul>
+<li>插入网络图片：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">可爱的猫咪</span>](<span class="na">https://example.com/cat.jpg</span>)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ul>
+<li>插入本地图片（相对路径）：
+假设在当前目录下有一个名为<code>image.png</code>的图片，可以这样插入：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">![<span class="nt">美丽的风景</span>](<span class="na">image.png</span>)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="六强调">六、强调</h2>
+<h3 id="1-斜体">1. 斜体</h3>
+<ul>
+<li>语法介绍：使用<code>*</code>或<code>_</code>包裹需要强调的文本。</li>
+<li>用法介绍：在文本前后分别加上一个<code>*</code>或<code>_</code>。</li>
+<li>具体示例及对应 Markdown 代码：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">*这是斜体文本*
+</span></span><span class="line"><span class="cl">_这也是斜体文本_</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="2-粗体">2. 粗体</h3>
+<ul>
+<li>语法介绍：使用<code>**</code>或<code>__</code>包裹需要加粗的文本。</li>
+<li>用法介绍：在文本前后分别加上两个<code>*</code>或<code>_</code>。</li>
+<li>具体示例及对应 Markdown 代码：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">**这是粗体文本**
+</span></span><span class="line"><span class="cl">__这也是粗体文本__</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="3-同时使用斜体和粗体">3. 同时使用斜体和粗体</h3>
+<ul>
+<li>语法介绍：使用<code>***</code>或<code>___</code>包裹需要同时斜体和加粗的文本。</li>
+<li>用法介绍：在文本前后分别加上三个<code>*</code>或<code>_</code>。</li>
+<li>具体示例及对应 Markdown 代码：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">***这是斜体加粗文本***
+</span></span><span class="line"><span class="cl">___这也是斜体加粗文本___</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="七代码块">七、代码块</h2>
+<h3 id="1-行内代码">1. 行内代码</h3>
+<ul>
+<li>语法介绍：使用反引号（`）包裹行内代码。</li>
+<li>用法介绍：在需要插入代码的地方使用反引号包裹代码。</li>
+<li>具体示例及对应 Markdown 代码：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">这是一段包含行内代码的文本，比如`print(&#34;Hello, World!&#34;)`。</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="2-代码块">2. 代码块</h3>
+<ul>
+<li>语法介绍：使用三个反引号包裹代码块，并在开头的反引号后指定代码语言（可选）。</li>
+<li>用法介绍：在需要插入代码块的地方，先输入三个反引号，然后在后面指定代码语言（如果需要语法高亮），接着输入代码，最后再输入三个反引号。</li>
+<li>具体示例及对应 Markdown 代码：</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">```python
+</span></span><span class="line"><span class="cl">    def hello_world():
+</span></span><span class="line"><span class="cl">        print(&#34;Hello, World!&#34;)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="八引用">八、引用</h2>
+<h3 id="语法介绍-3">语法介绍</h3>
+<p>引用的语法为<code>&gt; </code>加上引用的内容。</p>
+<h3 id="用法介绍-3">用法介绍</h3>
+<p>可以嵌套引用，即一个引用中可以包含另一个引用。</p>
+<h3 id="具体示例及对应-markdown-代码-3">具体示例及对应 Markdown 代码</h3>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">这是一个引用。
+</span></span></span><span class="line"><span class="cl"><span class="ge"></span>&gt; &gt; 这是一个嵌套引用。</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="九分割线">九、分割线</h2>
+<h3 id="语法介绍-4">语法介绍</h3>
+<p>可以使用三个以上的星号<code>***</code>、减号<code>---</code>或下划线<code>___</code>来创建分割线。</p>
+<h3 id="用法介绍-4">用法介绍</h3>
+<p>在一行中单独输入这些符号即可创建分割线。</p>
+<h3 id="具体示例及对应-markdown-代码-4">具体示例及对应 Markdown 代码</h3>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">***
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">___</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="十表格">十、表格</h2>
+<h3 id="语法介绍-5">语法介绍</h3>
+<p>使用<code>|</code>来分隔表格的列，使用<code>-</code>来分隔表头和表体，使用<code>:</code>来对齐列。</p>
+<h3 id="用法介绍-5">用法介绍</h3>
+<ul>
+<li>第一行是表头，用<code>|</code>分隔不同的列名。</li>
+<li>第二行是分隔表头和表体的行，用<code>-</code>表示，并且可以在需要对齐的列名下面加上<code>:</code>来指定对齐方式（左对齐、右对齐或居中对齐）。</li>
+<li>从第三行开始是表体内容，每行用<code>|</code>分隔不同的列值。</li>
+</ul>
+<h3 id="具体示例及对应-markdown-代码-5">具体示例及对应 Markdown 代码</h3>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">| 列 1 | 列 2 | 列 3 |
+</span></span><span class="line"><span class="cl">| ---- | ----: | :----: |
+</span></span><span class="line"><span class="cl">| 值 1 | 值 2 | 值 3 |
+</span></span><span class="line"><span class="cl">| 值 4 | 值 5 | 值 6 |</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="十一任务列表">十一、任务列表</h2>
+<h3 id="语法介绍-6">语法介绍</h3>
+<p>任务列表的语法为<code>- [ ]</code>表示未完成的任务，<code>- [x]</code>表示已完成的任务。</p>
+<h3 id="用法介绍-6">用法介绍</h3>
+<p>在<code>-</code>后面加上一个空格，然后是<code>[ ]</code>或<code>[x]</code>，再加上一个空格和任务描述。</p>
+<h3 id="具体示例及对应-markdown-代码-6">具体示例及对应 Markdown 代码</h3>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">- [ ]</span> 任务 1
+</span></span><span class="line"><span class="cl"><span class="k">- [x]</span> 任务 2
+</span></span><span class="line"><span class="cl">- [ ] 任务 3</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="十二总结">十二、总结</h2>
+<p>Markdown 语法简洁明了，易于掌握。通过本文的介绍，相信你已经对 Markdown 的各种语法有了更深入的了解。在实际使用中，可以根据不同的需求灵活运用这些语法，提高文档的编写效率和可读性。无论是写博客、做笔记还是编写技术文档，Markdown 都是一个非常实用的工具。</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
