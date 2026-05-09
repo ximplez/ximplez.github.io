@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>豆包 on ximplez</title>
+    <link>https://ximplez.github.io/tags/%E8%B1%86%E5%8C%85/</link>
+    <description>Recent content in 豆包 on ximplez</description>
+    <image>
+      <title>ximplez</title>
+      <url>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 03 Dec 2024 11:06:08 +0800</lastBuildDate>
+    <atom:link href="https://ximplez.github.io/tags/%E8%B1%86%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regex正则表达式攻略</title>
+      <link>https://ximplez.github.io/topics/notes/regex/</link>
+      <pubDate>Thu, 28 Nov 2024 14:42:57 +0800</pubDate>
+      <guid>https://ximplez.github.io/topics/notes/regex/</guid>
+      <description>整篇文章由`豆包`生成</description>
+      <content:encoded><![CDATA[<h1 id="正则表达式详解">正则表达式详解</h1>
+<p>正则表达式是一种强大的文本模式匹配工具，广泛应用于各种编程语言和文本处理软件中。它可以用来搜索、替换和验证文本。本文将介绍正则表达式的常用语法、示例以及一些常用表达式。</p>
+<h2 id="一正则表达式基础">一、正则表达式基础</h2>
+<h3 id="1-字符匹配">1. 字符匹配</h3>
+<ul>
+<li>普通字符：直接匹配自身。例如，正则表达式<code>apple</code>可以匹配字符串中的<code>apple</code>。</li>
+<li>特殊字符：具有特殊含义，如<code>.*?+()[]{}|</code>等。需要使用反斜杠<code>\</code>进行转义才能匹配其本身。例如，<code>\*</code>匹配<code>*</code>字符。</li>
+</ul>
+<h3 id="2-元字符">2. 元字符</h3>
+<ul>
+<li><code>.</code>：匹配任意单个字符。例如，<code>a.ple</code>可以匹配<code>apple</code>、<code>ample</code>等。</li>
+<li><code>\d</code>：匹配一个数字字符。例如，<code>\d\d-\d\d-\d\d\d\d</code>可以匹配日期格式，如<code>12-30-2023</code>。</li>
+<li><code>\w</code>：匹配一个字母、数字或下划线字符。例如，<code>\w\w\w\w</code>可以匹配<code>abcd</code>、<code>a12_</code>等。</li>
+<li><code>\s</code>：匹配一个空白字符，包括空格、制表符、换行符等。例如，<code>Hello\sWorld</code>可以匹配<code>Hello World</code>。</li>
+</ul>
+<h3 id="3-量词">3. 量词</h3>
+<ul>
+<li><code>*</code>：匹配前面的字符零次或多次。例如，<code>a*b</code>可以匹配<code>b</code>、<code>ab</code>、<code>aab</code>等。</li>
+<li><code>+</code>：匹配前面的字符一次或多次。例如，<code>a+b</code>可以匹配<code>ab</code>、<code>aab</code>等，但不能匹配<code>b</code>。</li>
+<li><code>?</code>：匹配前面的字符零次或一次。例如，<code>a?b</code>可以匹配<code>b</code>或<code>ab</code>。</li>
+<li><code>{n}</code>：匹配前面的字符恰好<code>n</code>次。例如，<code>a{3}b</code>可以匹配<code>aaab</code>。</li>
+<li><code>{n,}</code>：匹配前面的字符至少<code>n</code>次。例如，<code>a{2,}b</code>可以匹配<code>aab</code>、<code>aaab</code>等。</li>
+<li><code>{n,m}</code>：匹配前面的字符至少<code>n</code>次，至多<code>m</code>次。例如，<code>a{2,4}b</code>可以匹配<code>aab</code>、<code>aaab</code>、<code>aaaab</code>。</li>
+</ul>
+<h3 id="4-分组和捕获">4. 分组和捕获</h3>
+<ul>
+<li><code>()</code>：用于分组。可以将多个字符组合在一起作为一个整体进行匹配。例如，<code>(ab)+c</code>可以匹配<code>abc</code>、<code>ababc</code>等。</li>
+<li><code>(?:)</code>：非捕获分组。与普通分组类似，但不会捕获匹配的内容。例如，<code>(?:ab)+c</code>只匹配<code>abc</code>、<code>ababc</code>等，但不会捕获<code>ab</code>。</li>
+<li><code>\1</code>、<code>\2</code>等：引用捕获组。可以在正则表达式中引用之前捕获的内容。例如，<code>(\w)\1</code>可以匹配<code>aa</code>、<code>bb</code>等。</li>
+</ul>
+<h3 id="5-锚点">5. 锚点</h3>
+<ul>
+<li><code>^</code>：匹配字符串的开头。例如，<code>^Hello</code>只能匹配以<code>Hello</code>开头的字符串。</li>
+<li><code>$</code>：匹配字符串的结尾。例如，<code>World$</code>只能匹配以<code>World</code>结尾的字符串。</li>
+</ul>
+<h2 id="二正则表达式示例">二、正则表达式示例</h2>
+<h3 id="1-验证电子邮件地址">1. 验证电子邮件地址</h3>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>regex
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">^\w+([-+.&#39;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>这个正则表达式可以验证一个字符串是否是有效的电子邮件地址。它匹配以字母、数字或下划线开头，后面跟着零个或多个由连字符、加号、点号或单引号分隔的字母、数字或下划线，然后是一个<code>@</code>符号，接着是一个或多个由连字符或点号分隔的域名部分，最后是一个点号和一个顶级域名。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>python
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">email</span> <span class="o">=</span> <span class="s2">&#34;test@example.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;^\w+([-+.&#39;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Valid email address&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Invalid email address&#34;</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="2-提取电话号码">2. 提取电话号码</h3>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>regex
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\d{3}-\d{3}-\d{4}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>这个正则表达式可以匹配美国电话号码格式，即三个数字、一个连字符、三个数字、一个连字符和四个数字。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>python
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">text</span> <span class="o">=</span> <span class="s2">&#34;My phone number is 123-456-7890.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;\d</span><span class="si">{3}</span><span class="s2">-\d</span><span class="si">{3}</span><span class="s2">-\d</span><span class="si">{4}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="3-匹配-html-标签">3. 匹配 HTML 标签</h3>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>regex
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;(\w+)\b[^&gt;]*&gt;(.*?)&lt;/\1&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>这个正则表达式可以匹配 HTML 标签，包括开始标签和结束标签，并捕获标签名和标签内容。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>python
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">html</span> <span class="o">=</span> <span class="s2">&#34;&lt;p&gt;This is a paragraph.&lt;/p&gt;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;&lt;(\w+)\b[^&gt;]*&gt;(.*?)&lt;/\1&gt;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="三常用正则表达式">三、常用正则表达式</h2>
+<h3 id="1-用户名">1. 用户名</h3>
+<ul>
+<li>字母、数字、下划线组成，长度为 3 到 20 个字符：<code>^\w{3,20}$</code></li>
+</ul>
+<h3 id="2-密码">2. 密码</h3>
+<ul>
+<li>至少包含一个大写字母、一个小写字母、一个数字和一个特殊字符，长度为 8 到 20 个字符：<code>^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&amp;*])\w{8,20}$</code></li>
+</ul>
+<h3 id="3-url">3. URL</h3>
+<ul>
+<li>匹配基本的 URL 格式：<code>^(https?|ftp)://[^\s/$.?#].[^\s]*$</code></li>
+</ul>
+<h3 id="4-日期">4. 日期</h3>
+<ul>
+<li>匹配 YYYY-MM-DD 格式的日期：<code>^\d{4}-\d{2}-\d{2}$</code></li>
+</ul>
+<h3 id="5-整数">5. 整数</h3>
+<ul>
+<li>匹配整数：<code>^\d+$</code></li>
+</ul>
+<h3 id="6-浮点数">6. 浮点数</h3>
+<ul>
+<li>匹配浮点数：<code>^\d+\.\d+$</code></li>
+</ul>
+<h2 id="四总结">四、总结</h2>
+<p>正则表达式是一种非常强大的工具，可以用于各种文本处理任务。本文介绍了正则表达式的常用语法、示例以及一些常用表达式。掌握正则表达式可以提高文本处理的效率和准确性。在实际应用中，可以根据具体需求灵活运用正则表达式，以实现更复杂的文本匹配和处理任务。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Git日常使用技巧详解</title>
+      <link>https://ximplez.github.io/topics/notes/git/</link>
+      <pubDate>Thu, 28 Nov 2024 14:26:15 +0800</pubDate>
+      <guid>https://ximplez.github.io/topics/notes/git/</guid>
+      <description>整篇文章由`豆包`生成</description>
+      <content:encoded><![CDATA[<h1 id="git-日常使用技巧">Git 日常使用技巧</h1>
+<p>在软件开发过程中，Git 是一个非常强大的版本控制工具。掌握一些 Git 的日常使用技巧，可以提高开发效率，减少错误。本文将介绍一些 Git 的日常使用技巧，并通过示例来说明它们的使用方式。</p>
+<h2 id="一基本概念">一、基本概念</h2>
+<p>在介绍 Git 技巧之前，我们先来回顾一下一些基本概念。</p>
+<ol>
+<li><strong>仓库（Repository）</strong>：一个包含了项目所有文件和历史记录的目录。</li>
+<li><strong>提交（Commit）</strong>：将代码的更改保存到仓库中，形成一个新的版本。</li>
+<li><strong>分支（Branch）</strong>：在同一仓库中，可以创建多个分支，每个分支代表一个独立的开发线路。</li>
+<li><strong>合并（Merge）</strong>：将一个分支的更改合并到另一个分支中。</li>
+<li><strong>拉取（Pull）</strong>：从远程仓库获取最新的代码更改。</li>
+<li><strong>推送（Push）</strong>：将本地仓库的更改推送到远程仓库。</li>
+</ol>
+<h2 id="二常用技巧">二、常用技巧</h2>
+<ol>
+<li><strong>查看提交历史</strong></li>
+</ol>
+<p>使用<code>git log</code>命令可以查看仓库的提交历史。这个命令会显示每个提交的哈希值、作者、日期和提交消息。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git log</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>可以使用<code>--oneline</code>选项来显示简洁的提交历史：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git log --oneline</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>撤销未提交的更改</strong></li>
+</ol>
+<p>如果你对代码进行了一些更改，但还没有提交，可以使用<code>git checkout</code>命令来撤销这些更改。</p>
+<p>例如，如果你想撤销对一个文件的更改：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout -- filename</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>如果你想撤销所有未提交的更改：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout --.</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>暂存部分更改</strong></li>
+</ol>
+<p>有时候，你可能只想暂存一部分更改，而不是全部提交。可以使用<code>git add -p</code>命令来交互式地暂存更改。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add -p</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>这个命令会逐个显示文件中的更改，你可以选择暂存或跳过每个更改。</p>
+<ol>
+<li><strong>忽略文件</strong></li>
+</ol>
+<p>在项目中，有些文件不需要被版本控制，比如临时文件、编译生成的文件等。可以在仓库的根目录下创建一个<code>.gitignore</code>文件，列出这些不需要被版本控制的文件和目录。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>plaintext
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">*.log
+</span></span><span class="line"><span class="cl">temp/
+</span></span><span class="line"><span class="cl">build/</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>分支管理</strong></li>
+</ol>
+<ul>
+<li>
+<p>创建分支：使用<code>git branch</code>命令可以创建一个新分支。</p>
+<p>例如：</p>
+</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch new-branch</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ul>
+<li>
+<p>切换分支：使用<code>git checkout</code>命令可以切换到一个已有的分支。</p>
+<p>例如：</p>
+</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout new-branch</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ul>
+<li>
+<p>合并分支：使用<code>git merge</code>命令可以将一个分支的更改合并到另一个分支中。</p>
+<p>例如：</p>
+</li>
+</ul>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout master
+</span></span><span class="line"><span class="cl">git merge new-branch</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>解决合并冲突</strong></li>
+</ol>
+<p>当两个分支对同一个文件进行了不同的更改时，合并时可能会出现冲突。Git 会在冲突的文件中标记出冲突的部分，你需要手动解决这些冲突，然后使用<code>git add</code>命令将解决后的文件暂存起来，最后使用<code>git commit</code>命令提交合并。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git merge new-branch
+</span></span><span class="line"><span class="cl"><span class="c1"># 解决冲突</span>
+</span></span><span class="line"><span class="cl">git add filename
+</span></span><span class="line"><span class="cl">git commit</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>拉取远程仓库的最新更改</strong></li>
+</ol>
+<p>使用<code>git pull</code>命令可以从远程仓库获取最新的代码更改，并合并到当前分支中。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git pull origin master</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>推送本地仓库的更改到远程仓库</strong></li>
+</ol>
+<p>使用<code>git push</code>命令可以将本地仓库的更改推送到远程仓库。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push origin master</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>查看分支差异</strong></li>
+</ol>
+<p>使用<code>git diff</code>命令可以查看两个分支之间的差异。</p>
+<p>例如，查看当前分支和<code>master</code>分支之间的差异：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git diff master</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>查看文件的历史版本</strong></li>
+</ol>
+<p>使用<code>git log -p filename</code>命令可以查看一个文件的历史版本。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git log -p filename</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>恢复到特定的提交</strong></li>
+</ol>
+<p>如果你想恢复到仓库的某个特定提交，可以使用<code>git reset</code>命令。</p>
+<p>例如，恢复到上一个提交：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git reset --hard HEAD^</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>如果你想恢复到特定的提交哈希值：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git reset --hard commit-hash</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>重命名分支</strong></li>
+</ol>
+<p>使用<code>git branch -m</code>命令可以重命名当前分支。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch -m new-name</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>删除分支</strong></li>
+</ol>
+<p>使用<code>git branch -d</code>命令可以删除一个已合并的分支。如果分支未合并，需要使用<code>-D</code>选项强制删除。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch -d branch-name
+</span></span><span class="line"><span class="cl"><span class="c1"># 强制删除未合并的分支</span>
+</span></span><span class="line"><span class="cl">git branch -D branch-name</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>标记版本</strong></li>
+</ol>
+<p>使用<code>git tag</code>命令可以为特定的提交打标签，以便于标记重要的版本。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git tag v1.0
+</span></span><span class="line"><span class="cl">git push origin v1.0</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ol>
+<li><strong>查看远程仓库信息</strong></li>
+</ol>
+<p>使用<code>git remote -v</code>命令可以查看远程仓库的名称和 URL。</p>
+<p>例如：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote -v</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h2 id="三总结">三、总结</h2>
+<p>Git 是一个非常强大的版本控制工具，掌握一些日常使用技巧可以提高开发效率。本文介绍了一些 Git 的常用技巧，包括查看提交历史、撤销未提交的更改、暂存部分更改、分支管理、解决合并冲突、拉取和推送更改、查看分支差异、查看文件的历史版本、恢复到特定的提交、重命名分支、删除分支、标记版本和查看远程仓库信息等。希望这些技巧对你有所帮助。</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

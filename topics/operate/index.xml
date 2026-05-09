@@ -1,0 +1,3181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>🤖 折腾合集 on ximplez</title>
+    <link>https://ximplez.github.io/topics/operate/</link>
+    <description>Recent content in 🤖 折腾合集 on ximplez</description>
+    <image>
+      <title>ximplez</title>
+      <url>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>zh</language>
+    <atom:link href="https://ximplez.github.io/topics/operate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CF优选节点实践</title>
+      <link>https://ximplez.github.io/topics/operates/cf%E4%BC%98%E9%80%89%E8%8A%82%E7%82%B9%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Wed, 29 Apr 2026 11:36:27 +0800</pubDate>
+      <guid>https://ximplez.github.io/topics/operates/cf%E4%BC%98%E9%80%89%E8%8A%82%E7%82%B9%E5%AE%9E%E8%B7%B5/</guid>
+      <description>CF优选节点实践</description>
+      <content:encoded><![CDATA[<h1 id="cloudflaresaas回源优选ip技术方案实现国内用户高速访问海外网站">CloudFlare+SaaS回源优选IP技术方案：实现国内用户高速访问海外网站</h1>
+<!-- raw HTML omitted -->
+<h2 id="一原理分析">一、原理分析</h2>
+<h3 id="11-cloudflare-saas回源技术核心原理">1.1 CloudFlare SaaS回源技术核心原理</h3>
+<!-- raw HTML omitted -->
+<h4 id="111-技术架构组件">1.1.1 技术架构组件</h4>
+<ul>
+<li><strong>回源地址（Fallback Origin）</strong>：指向原始服务器的地址，当请求在CDN中不可用时，CloudFlare会将请求转发到回源地址<a href="https://zhuanlan.zhihu.com/p/1916543236283016664" target="_blank"
+   rel="noopener nofollow noreferrer" >[1]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>自定义主机名（Custom Hostnames）</strong>：客户自己的域名，CloudFlare会将匹配自定义主机名的请求转发到回源地址<a href="https://zhuanlan.zhihu.com/p/1916543236283016664" target="_blank"
+   rel="noopener nofollow noreferrer" >[1]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a><a href="https://www.xiaoa.me/archives/cfsaas.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[2]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>CNAME目标</strong>：可选的友好域名，为客户提供更灵活的流量路由点<a href="https://developers.cloudflare.com/cloudflare-for-platforms/cloudflare-for-saas/start/getting-started/" target="_blank"
+   rel="noopener nofollow noreferrer" >[8]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="112-工作流程">1.1.2 工作流程</h4>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>text
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">用户访问自定义域名（如 image.dooo.ng）
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">CNAME解析到优选域名（如 csgo.com）
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">请求发送到经过优选的CloudFlare IP
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">CloudFlare边缘节点匹配自定义主机名
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">回源到设置的服务器IP
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">返回内容给用户</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="12-cloudflare-anycast技术与节点分配问题">1.2 CloudFlare Anycast技术与节点分配问题</h3>
+<!-- raw HTML omitted -->
+<h4 id="121-免费用户的节点分配限制">1.2.1 免费用户的节点分配限制</h4>
+<ul>
+<li><strong>线路不佳</strong>：免费版CloudFlare对中国大陆方向的网络优化很差，经常出现rest的情况<a href="https://www.silverdragon.cn/archives/7484/" target="_blank"
+   rel="noopener nofollow noreferrer" >[4]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>节点随机分配</strong>：用户无法指定分配的边缘服务器，域名实际查询到的IP线路并不好<a href="https://nicelee.top/blog/2024/07/26/cloudflare-better-ips/" target="_blank"
+   rel="noopener nofollow noreferrer" >[5]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>减速效应</strong>：用户如果连接至延迟更高的IP反而会获得&quot;减速&quot;效果<a href="https://www.silverdragon.cn/archives/7484/" target="_blank"
+   rel="noopener nofollow noreferrer" >[4]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="122-优选ip的实现机制">1.2.2 优选IP的实现机制</h4>
+<ol>
+<li><strong>IP段扫描</strong>：CloudFlare CDN的IP范围是公开的，可以扫描所有CF网段，得到接近80万个IP<a href="https://www.taterli.com/7173" target="_blank"
+   rel="noopener nofollow noreferrer" >[6]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>延迟测试</strong>：使用工具（如CloudflareSpeedTest）测试每个IP的延迟<a href="https://www.taterli.com/7173" target="_blank"
+   rel="noopener nofollow noreferrer" >[6]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>速度测试</strong>：测试回源速度，因为延迟低不一定回源快，丢包高不一定下载慢<a href="https://www.taterli.com/7173" target="_blank"
+   rel="noopener nofollow noreferrer" >[6]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>人工筛选</strong>：从测试结果中找到速度比较稳定的节点使用<a href="https://www.taterli.com/7173" target="_blank"
+   rel="noopener nofollow noreferrer" >[6]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ol>
+<h3 id="13-为什么saas回源优选ip能提升国内访问速度">1.3 为什么SaaS回源+优选IP能提升国内访问速度</h3>
+<!-- raw HTML omitted -->
+<h4 id="131-技术分离策略">1.3.1 技术分离策略</h4>
+<ul>
+<li><strong>验证与路由分离</strong>：先完成CNAME验证，然后修改为优选IP<a href="https://winward-king.github.io/2025/10/27/Network/01CFTunnelSass/index.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[9]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>借用优化线路</strong>：将域名CNAME解析到经过大陆特殊优化的CloudFlare节点，如百度云合作的IP地址<a href="https://www.nodeseek.com/post-42661-1" target="_blank"
+   rel="noopener nofollow noreferrer" >[3]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>透明代理</strong>：用户只知道访问的是自定义域名，但实际上得到的内容是经过CloudFlare优化处理后的<a href="https://www.nodeseek.com/post-42661-1" target="_blank"
+   rel="noopener nofollow noreferrer" >[3]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="132-中国大陆网络特殊性优化">1.3.2 中国大陆网络特殊性优化</h4>
+<ul>
+<li><strong>国际出口带宽有限</strong>：中国大陆到国际的网络出口带宽有限，需要特殊优化<a href="https://www.silverdragon.cn/archives/7484/" target="_blank"
+   rel="noopener nofollow noreferrer" >[4]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>运营商差异</strong>：电信、联通、移动等不同运营商的线路质量差异大<a href="https://nicelee.top/blog/2024/07/26/cloudflare-better-ips/" target="_blank"
+   rel="noopener nofollow noreferrer" >[5]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>路由策略</strong>：需要针对不同运营商选择不同的优选IP<a href="https://nicelee.top/blog/2024/07/26/cloudflare-better-ips/" target="_blank"
+   rel="noopener nofollow noreferrer" >[5]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h3 id="14-常用优选域名与ip段">1.4 常用优选域名与IP段</h3>
+<!-- raw HTML omitted -->
+<h4 id="141-政府网站优选域名">1.4.1 政府网站优选域名</h4>
+<ul>
+<li>乌克兰政府：<code>www.gov.ua</code></li>
+<li>泰国政府：<code>www.thaigov.go.th</code></li>
+<li>卡塔尔政府：<code>www.gco.gov.qa</code></li>
+<li>瑞典政府：<code>www.gov.se</code></li>
+<li>美国FBI：<code>FBI.GOV</code><a href="https://www.nodeseek.com/post-42661-1" target="_blank"
+   rel="noopener nofollow noreferrer" >[3]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="142-商业网站优选域名">1.4.2 商业网站优选域名</h4>
+<ul>
+<li>CSGO官方网站：<code>CSGO.COM</code>（Cloudflare LONDON ASN）</li>
+<li>DigitalOcean：<code>digitalocean.com</code></li>
+<li>VISA官方网站：<code>VISA.COM</code>、<code>VISA.CN</code>、<code>VISA.FI</code>、<code>VISA.HK</code></li>
+<li>Shopify：<code>SHOPIFY.COM</code>（推荐）</li>
+<li>域名注册商：<code>Dynadot.COM</code><a href="https://www.nodeseek.com/post-42661-1" target="_blank"
+   rel="noopener nofollow noreferrer" >[3]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="143-cloudflare百度云合作ip段">1.4.3 CloudFlare百度云合作IP段</h4>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>text
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">162.159.208.4-162.159.208.103
+</span></span><span class="line"><span class="cl">162.159.209.4-162.159.209.103
+</span></span><span class="line"><span class="cl">162.159.210.4-162.159.210.103
+</span></span><span class="line"><span class="cl">162.159.211.4-162.159.211.103</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h4 id="144-各线路推荐ip段">1.4.4 各线路推荐IP段</h4>
+<ul>
+<li><strong>电信</strong>：推荐圣何塞节点，如 <code>104.16.160.*</code> 或百度云合作IP</li>
+<li><strong>移动</strong>：推荐香港节点，如 <code>172.64.32.*</code>、<code>141.101.115.*</code> 或 <code>104.23.240.0-104.23.243.254</code></li>
+<li><strong>联通</strong>：可走圣何塞节点，如 <code>104.16.160.*</code> 或 <code>104.23.240.0-104.23.243.254</code></li>
+</ul>
+<h2 id="二步骤整理">二、步骤整理</h2>
+<h3 id="21-准备工作">2.1 准备工作</h3>
+<!-- raw HTML omitted -->
+<h4 id="211-域名准备">2.1.1 域名准备</h4>
+<p>需要准备两个域名：</p>
+<ol>
+<li><strong>访问域名</strong>：作为自定义主机名，例如 <code>a.com</code>（不要接入CloudFlare）</li>
+<li><strong>回源域名</strong>：使用NS方式接入CloudFlare，例如 <code>b.com</code>（可以使用免费域名如eu.org）</li>
+</ol>
+<p><strong>重要限制</strong>：一个域名的回源IP有且只能有一个。如果多个网站位于不同服务器，需要多个回源域名<a href="https://www.xiaoa.me/archives/cfsaas.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[2]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a>。</p>
+<h4 id="212-账户准备">2.1.2 账户准备</h4>
+<ol>
+<li>CloudFlare账户（免费版即可）</li>
+<li>支付方式：PayPal或国际信用卡（用于启用SaaS功能，仅验证不扣费）</li>
+</ol>
+<h4 id="213-dns服务商选择">2.1.3 DNS服务商选择</h4>
+<p>建议使用支持线路分流的DNS服务商：</p>
+<ul>
+<li>腾讯云DNSPOD（推荐，免费分流）</li>
+<li>阿里云DNS</li>
+<li>华为云DNS</li>
+<li>京东云DNS</li>
+</ul>
+<h3 id="22-cloudflare后台配置步骤">2.2 CloudFlare后台配置步骤</h3>
+<!-- raw HTML omitted -->
+<h4 id="221-回源域名ns接入">2.2.1 回源域名NS接入</h4>
+<ol>
+<li>登录CloudFlare控制台</li>
+<li>添加网站：输入回源域名（如 <code>b.com</code>）</li>
+<li>选择免费计划</li>
+<li>按照提示修改域名服务器的NS记录</li>
+<li>等待DNS生效（通常几分钟到几小时）</li>
+</ol>
+<h4 id="222-添加dns解析记录">2.2.2 添加DNS解析记录</h4>
+<ol>
+<li>进入回源域名管理界面 → DNS → 记录</li>
+<li>添加A记录：
+<ul>
+<li>名称：<code>origin</code>（或任意二级域名）</li>
+<li>IPv4地址：填写真实服务器IP地址</li>
+<li>代理状态：开启小黄云（✅）</li>
+</ul>
+</li>
+</ol>
+<p><strong>示例配置</strong>：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>text
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">名称：origin
+</span></span><span class="line"><span class="cl">类型：A
+</span></span><span class="line"><span class="cl">内容：8.8.8.8（替换为你的服务器IP）
+</span></span><span class="line"><span class="cl">代理状态：已代理</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="23-saas回源设置">2.3 SaaS回源设置</h3>
+<!-- raw HTML omitted -->
+<h4 id="231-启用cloudflare-for-saas">2.3.1 启用CloudFlare for SaaS</h4>
+<ol>
+<li>进入回源域名管理界面 → SSL/TLS → 自定义主机名</li>
+<li>点击&quot;启用 CloudFlare for SaaS&quot;按钮</li>
+<li>选择付款方式：
+<ul>
+<li>PayPal：需要科学上网才能显示此选项</li>
+<li>信用卡：支持Visa/MasterCard等</li>
+</ul>
+</li>
+<li>填写支付信息（仅验证，不产生费用）</li>
+<li>确认订阅（前100个自定义主机名免费）</li>
+</ol>
+<h4 id="232-添加回退源">2.3.2 添加回退源</h4>
+<ol>
+<li>在&quot;自定义主机名&quot;页面，点击&quot;添加回退源&quot;</li>
+<li>输入回退源地址：<code>origin.b.com</code>（即第2.2.2步设置的二级域名）</li>
+<li>点击&quot;添加回退源&quot;</li>
+<li>等待状态变为&quot;有效&quot;（通常1分钟内）</li>
+</ol>
+<h4 id="233-检查回退源">2.3.3 检查回退源</h4>
+<p>访问 <code>origin.b.com</code>，如果看到以下页面，说明回退源设置成功：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>text
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Error 1001: DNS resolution error</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p>这是因为还没有设置自定义主机名，CloudFlare不知道将哪个域名回源到服务器。</p>
+<h3 id="24-自定义主机名配置">2.4 自定义主机名配置</h3>
+<!-- raw HTML omitted -->
+<h4 id="241-添加自定义主机名">2.4.1 添加自定义主机名</h4>
+<ol>
+<li>在&quot;自定义主机名&quot;页面，点击&quot;添加自定义主机名&quot;</li>
+<li>填写自定义主机名：<code>www.a.com</code>（或根域名 <code>a.com</code>）</li>
+<li>TLS版本：默认1.0</li>
+<li>证书验证方法：选择&quot;TXT验证&quot;</li>
+<li>点击&quot;添加自定义主机名&quot;</li>
+</ol>
+<h4 id="242-验证域名所有权">2.4.2 验证域名所有权</h4>
+<p>添加后显示&quot;待验证&quot;状态，需要添加两个TXT记录：</p>
+<ol>
+<li><strong>证书验证TXT</strong>：用于SSL证书签发</li>
+<li><strong>主机名预验证TXT</strong>：用于域名所有权验证</li>
+</ol>
+<p><strong>操作步骤</strong>：</p>
+<ol>
+<li>进入访问域名的DNS管理界面（如DNSPOD）</li>
+<li>添加TXT记录：
+<ul>
+<li>主机记录：<code>_acme-challenge.www</code>（如果是二级域名）</li>
+<li>记录值：从CloudFlare复制的TXT值</li>
+</ul>
+</li>
+<li>添加第二个TXT记录：
+<ul>
+<li>主机记录：<code>_cf-custom-hostname.www</code></li>
+<li>记录值：从CloudFlare复制的TXT值</li>
+</ul>
+</li>
+</ol>
+<p><strong>注意</strong>：CloudFlare给出的验证名称是完整域名，在DNS服务商中设置时不要包含主域名部分。</p>
+<h4 id="243-等待验证完成">2.4.3 等待验证完成</h4>
+<ol>
+<li>验证通常需要10-30分钟</li>
+<li>在CloudFlare控制台刷新状态</li>
+<li>当&quot;证书状态&quot;和&quot;主机名状态&quot;都显示&quot;有效&quot;时，表示配置成功</li>
+</ol>
+<h3 id="25-优选ip获取方法">2.5 优选IP获取方法</h3>
+<!-- raw HTML omitted -->
+<h4 id="251-使用cloudflarespeedtest工具">2.5.1 使用CloudflareSpeedTest工具</h4>
+<p>推荐使用XIU2开发的CloudflareSpeedTest工具：</p>
+<p><strong>下载地址</strong>：</p>
+<ul>
+<li>GitHub：https://github.com/XIU2/CloudflareSpeedTest</li>
+<li>国内镜像：https://gitee.com/klmahuaw/CloudflareSpeedTest</li>
+</ul>
+<p><strong>Windows系统使用</strong>：</p>
+<ol>
+<li>下载对应版本的压缩包</li>
+<li>解压到任意目录</li>
+<li>双击运行 <code>CloudflareSpeedTest.exe</code></li>
+<li>等待测速完成（默认测试所有CloudFlare IP段）</li>
+</ol>
+<p><strong>Linux系统使用</strong>：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 创建目录</span>
+</span></span><span class="line"><span class="cl">mkdir CloudflareST <span class="o">&amp;&amp;</span> <span class="nb">cd</span> CloudflareST
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载（使用国内镜像）</span>
+</span></span><span class="line"><span class="cl">wget -N https://download.fastgit.org/XIU2/CloudflareSpeedTest/releases/download/v2.0.3/CloudflareST_linux_amd64.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压</span>
+</span></span><span class="line"><span class="cl">tar -zxf CloudflareST_linux_amd64.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行</span>
+</span></span><span class="line"><span class="cl">./CloudflareST</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h4 id="252-常用参数说明">2.5.2 常用参数说明</h4>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 基本用法</span>
+</span></span><span class="line"><span class="cl">./CloudflareST
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定下载测速数量</span>
+</span></span><span class="line"><span class="cl">./CloudflareST -dn <span class="m">20</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置延迟上限（只输出延迟低于200ms的IP）</span>
+</span></span><span class="line"><span class="cl">./CloudflareST -tl <span class="m">200</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置下载速度下限（只输出速度高于5MB/s的IP）</span>
+</span></span><span class="line"><span class="cl">./CloudflareST -sl <span class="m">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 过滤回源IP（下载速度低于0.01MB/s）</span>
+</span></span><span class="line"><span class="cl">./CloudflareST -sl 0.01
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定IP段文件</span>
+</span></span><span class="line"><span class="cl">./CloudflareST -f ip.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 禁用下载测速（按延迟排序）</span>
+</span></span><span class="line"><span class="cl">./CloudflareST -dd</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="26-dns配置分流解析">2.6 DNS配置（分流解析）</h3>
+<!-- raw HTML omitted -->
+<h4 id="261-设置cdn记录">2.6.1 设置CDN记录</h4>
+<p>在访问域名的DNS服务商中（如DNSPOD），添加CDN记录：</p>
+<p><strong>方案一：使用优选域名（推荐）</strong></p>
+<ol>
+<li>
+<p><strong>境内线路</strong>：</p>
+<ul>
+<li>主机记录：<code>cdn</code></li>
+<li>记录类型：CNAME</li>
+<li>记录值：<code>csgo.com</code>（或其他优选域名）</li>
+<li>线路类型：境内（电信/联通/移动）</li>
+</ul>
+</li>
+<li>
+<p><strong>境外线路</strong>：</p>
+<ul>
+<li>主机记录：<code>cdn</code></li>
+<li>记录类型：A</li>
+<li>记录值：<code>1.0.0.5</code>（CloudFlare境外IP）</li>
+<li>线路类型：境外</li>
+</ul>
+</li>
+</ol>
+<p><strong>方案二：使用优选IP</strong></p>
+<ol>
+<li>
+<p><strong>境内线路</strong>：</p>
+<ul>
+<li>主机记录：<code>cdn</code></li>
+<li>记录类型：A</li>
+<li>记录值：优选IP地址（如 <code>104.16.160.1</code>）</li>
+<li>线路类型：境内</li>
+</ul>
+</li>
+<li>
+<p><strong>境外线路</strong>：</p>
+<ul>
+<li>主机记录：<code>cdn</code></li>
+<li>记录类型：A</li>
+<li>记录值：<code>1.0.0.5</code></li>
+<li>线路类型：境外</li>
+</ul>
+</li>
+</ol>
+<h4 id="262-设置主域名解析">2.6.2 设置主域名解析</h4>
+<p>将主域名CNAME解析到CDN记录：</p>
+<ol>
+<li>
+<p><strong>根域名解析</strong>：</p>
+<ul>
+<li>主机记录：<code>@</code></li>
+<li>记录类型：CNAME</li>
+<li>记录值：<code>cdn.a.com</code></li>
+<li>线路类型：默认</li>
+</ul>
+</li>
+<li>
+<p><strong>WWW域名解析</strong>（如果需要）：</p>
+<ul>
+<li>主机记录：<code>www</code></li>
+<li>记录类型：CNAME</li>
+<li>记录值：<code>cdn.a.com</code></li>
+<li>线路类型：默认</li>
+</ul>
+</li>
+</ol>
+<h3 id="27-测试验证方法">2.7 测试验证方法</h3>
+<!-- raw HTML omitted -->
+<h4 id="271-ping测试">2.7.1 Ping测试</h4>
+<p>使用在线工具测试延迟和路由：</p>
+<ol>
+<li><strong>ITDog</strong>：https://www.itdog.cn/ping/</li>
+<li><strong>Ping.pe</strong>：https://ping.pe/</li>
+<li><strong>本地命令行</strong>：
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Windows</span>
+</span></span><span class="line"><span class="cl">ping www.a.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Linux/Mac</span>
+</span></span><span class="line"><span class="cl">ping -c <span class="m">10</span> www.a.com</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</li>
+</ol>
+<h4 id="272-访问测试">2.7.2 访问测试</h4>
+<ol>
+<li>直接访问网站：<code>https://www.a.com</code></li>
+<li>检查SSL证书是否有效</li>
+<li>测试页面加载速度</li>
+</ol>
+<h4 id="273-线路验证">2.7.3 线路验证</h4>
+<ol>
+<li>使用不同网络环境测试（电信、移动、联通）</li>
+<li>使用海外代理测试境外访问</li>
+<li>检查是否实现分流效果</li>
+</ol>
+<h2 id="三注意点和踩坑点总结">三、注意点和踩坑点总结</h2>
+<h3 id="31-常见配置错误与解决方案">3.1 常见配置错误与解决方案</h3>
+<!-- raw HTML omitted -->
+<h4 id="311-ssl证书配置错误">3.1.1 SSL证书配置错误</h4>
+<ul>
+<li><strong>Error 525/526</strong>：SSL握手失败/无效SSL证书
+<ul>
+<li><strong>原因</strong>：CloudFlare SSL设置为Full或Full(Strict)时，源站没有正确配置SSL证书</li>
+<li><strong>解决</strong>：将CloudFlare SSL设置为Flexible（不推荐）或在源站正确配置主域名的证书<a href="https://zhichao.org/posts/416c7d" target="_blank"
+   rel="noopener nofollow noreferrer" >[2016040518]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+</li>
+</ul>
+<h4 id="312-dns配置错误">3.1.2 DNS配置错误</h4>
+<ul>
+<li><strong>Error 1000/1014</strong>：DNS指向被禁止的IP/CNAME跨用户禁止
+<ul>
+<li><strong>原因</strong>：主域名托管在CloudFlare并CNAME到回源域名/优选域名，触发CloudFlare限制</li>
+<li><strong>解决</strong>：主域名托管到其他DNS服务商<a href="https://zhichao.org/posts/416c7d" target="_blank"
+   rel="noopener nofollow noreferrer" >[2016040518]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+</li>
+</ul>
+<h4 id="313-重定向次数过多">3.1.3 重定向次数过多</h4>
+<ul>
+<li><strong>原因</strong>：HTTPS加密问题
+<ul>
+<li><strong>解决</strong>：进入CloudFlare后台 → SSL/TLS → 概述，将SSL/TLS加密模式改为&quot;完全&quot;<a href="https://vpsxb.net/6471/" target="_blank"
+   rel="noopener nofollow noreferrer" >[1123815918]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+</li>
+</ul>
+<h4 id="314-端口配置限制">3.1.4 端口配置限制</h4>
+<ul>
+<li><strong>问题</strong>：CloudFlare默认只支持特定端口：
+<ul>
+<li>HTTP：80, 8080, 8880, 2052, 2082, 2086, 2095</li>
+<li>HTTPS：443, 2053, 2083, 2087, 2096, 8443</li>
+</ul>
+</li>
+<li><strong>解决</strong>：使用Origin Rules功能回源到任意端口<a href="https://www.74110.net/tutorial/linux/cloudflare-origin-rules/" target="_blank"
+   rel="noopener nofollow noreferrer" >[623651029]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h3 id="32-网络与性能问题">3.2 网络与性能问题</h3>
+<!-- raw HTML omitted -->
+<h4 id="321-国内dns解析慢">3.2.1 国内DNS解析慢</h4>
+<ul>
+<li><strong>问题</strong>：使用NS方式接入CloudFlare的国内站点需要24-72小时解析生效</li>
+<li><strong>推荐</strong>：使用CNAME方式接入，几乎实时生效<a href="https://zhuanlan.zhihu.com/p/652201511" target="_blank"
+   rel="noopener nofollow noreferrer" >[293066963]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="322-dns污染问题">3.2.2 DNS污染问题</h4>
+<ul>
+<li><strong>问题</strong>：CloudFlare的workers.dev等域名可能被DNS污染</li>
+<li><strong>解决</strong>：使用自己的域名替代被污染的域名<a href="https://cloud.tencent.com/developer/article/2133923" target="_blank"
+   rel="noopener nofollow noreferrer" >[1678942133]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="323-回源ip限制">3.2.3 回源IP限制</h4>
+<ul>
+<li><strong>限制</strong>：一个回源域名只能对应一个源站IP</li>
+<li><strong>解决</strong>：如果多个网站位于不同服务器，需要多个回源域名<a href="https://www.moeelf.com/archives/305.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[1137630196]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="324-缓存配置不当">3.2.4 缓存配置不当</h4>
+<ul>
+<li><strong>问题</strong>：CloudFlare默认不缓存HTML文件</li>
+<li><strong>建议</strong>：手动设置缓存规则，将静态资源缓存到CDN节点，设置较长的Edge Cache TTL（如7天）<a href="https://yongwp.com/2068.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[3825476853]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="325-图片优化不足">3.2.5 图片优化不足</h4>
+<ul>
+<li><strong>问题</strong>：未启用CloudFlare的Polish功能自动优化图片大小</li>
+<li><strong>解决</strong>：启用Polish功能减少带宽占用<a href="https://www.hostol.com/archives/577" target="_blank"
+   rel="noopener nofollow noreferrer" >[241905605]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="326-压缩未启用">3.2.6 压缩未启用</h4>
+<ul>
+<li><strong>问题</strong>：未启用Brotli压缩功能</li>
+<li><strong>解决</strong>：启用自动压缩和优化功能<a href="https://www.hostol.com/archives/577" target="_blank"
+   rel="noopener nofollow noreferrer" >[241905605]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h3 id="33-cloudflare平台限制">3.3 CloudFlare平台限制</h3>
+<!-- raw HTML omitted -->
+<h4 id="331-免费额度限制">3.3.1 免费额度限制</h4>
+<ul>
+<li><strong>限制</strong>：每个CloudFlare账户有100个域名免费额度</li>
+<li><strong>注意</strong>：超过100个域名需要付费<a href="https://www.moeelf.com/archives/305.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[1137630196]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="332-信用卡要求">3.3.2 信用卡要求</h4>
+<ul>
+<li><strong>要求</strong>：开通CloudFlare for SaaS服务需要绑定信用卡<a href="https://github.com/dalaolala/blog/issues/46" target="_blank"
+   rel="noopener nofollow noreferrer" >[3526436489]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="333-api限制">3.3.3 API限制</h4>
+<ul>
+<li><strong>限制</strong>：CloudFlare Partner使用的zone_set API已被禁用，避免滥用<a href="https://www.moeelf.com/archives/305.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[1137630196]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="334-节点选择限制">3.3.4 节点选择限制</h4>
+<ul>
+<li><strong>问题</strong>：免费套餐节点较少，对中国大陆线路不友好</li>
+<li><strong>解决</strong>：需要手动优选IP来改善访问体验<a href="https://www.moeelf.com/archives/305.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[1137630196]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h3 id="34-国内访问的特殊问题">3.4 国内访问的特殊问题</h3>
+<!-- raw HTML omitted -->
+<h4 id="341-线路优化差异">3.4.1 线路优化差异</h4>
+<ul>
+<li><strong>问题</strong>：不同运营商（电信、联通、移动）访问CloudFlare节点速度差异大</li>
+<li><strong>解决</strong>：需要针对三网分别优选IP<a href="https://www.vpsjxw.com/vps_use/cf_ip_tool/" target="_blank"
+   rel="noopener nofollow noreferrer" >[1563616964]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="342-晚高峰爆炸问题">3.4.2 晚高峰爆炸问题</h4>
+<ul>
+<li><strong>问题</strong>：国内用户访问CloudFlare CDN在晚高峰时段容易不稳定</li>
+<li><strong>解决</strong>：配置CloudFlare优选IP<a href="https://www.vpsjxw.com/vps_use/cf_ip_tool/" target="_blank"
+   rel="noopener nofollow noreferrer" >[1563616964]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="343-间歇性抽风">3.4.3 间歇性抽风</h4>
+<ul>
+<li><strong>问题</strong>：CloudFlare默认节点在国内访问速度堪忧，间歇性抽风</li>
+<li><strong>解决</strong>：通过SaaS回源优选IP绕过默认节点<a href="https://vpsxb.net/6471/" target="_blank"
+   rel="noopener nofollow noreferrer" >[1123815918]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h3 id="35-ip失效与维护问题">3.5 IP失效与维护问题</h3>
+<!-- raw HTML omitted -->
+<h4 id="351-回源ip与任播ip混淆">3.5.1 回源IP与任播IP混淆</h4>
+<ul>
+<li><strong>问题</strong>：CloudFlare公开的IP段包含回源IP和任播IP，回源IP无法使用（下载速度为0）</li>
+<li><strong>解决</strong>：运行时加上<code>-sl 0.01</code>过滤掉回源IP<a href="https://github.com/XIU2/CloudflareSpeedTest" target="_blank"
+   rel="noopener nofollow noreferrer" >[1093528506]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="352-ip淘汰机制">3.5.2 IP淘汰机制</h4>
+<ul>
+<li><strong>问题</strong>：优选IP可能随时间变化而失效</li>
+<li><strong>建议</strong>：需要持续监测和更新IP，使用自动化脚本24小时测速和淘汰机制<a href="https://www.vpsjxw.com/vps_use/cf_ip_tool/" target="_blank"
+   rel="noopener nofollow noreferrer" >[1563616964]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="353-优选域名失效">3.5.3 优选域名失效</h4>
+<ul>
+<li><strong>问题</strong>：网友提供的优选域名可能失效</li>
+<li><strong>建议</strong>：使用知名网站的CloudFlare节点（如visa.com、csgo.com等）<a href="https://cloud.tencent.com/developer/article/2437958" target="_blank"
+   rel="noopener nofollow noreferrer" >[1363687326]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h3 id="36-安全注意事项">3.6 安全注意事项</h3>
+<!-- raw HTML omitted -->
+<h4 id="361-源站ip泄露防护">3.6.1 源站IP泄露防护</h4>
+<ul>
+<li><strong>风险</strong>：源站IP泄露可能导致直接攻击</li>
+<li><strong>解决</strong>：配置CloudFlare的WAF、5秒盾、人机认证等安全措施<a href="https://www.vpsjxw.com/vps_use/cf_ip_tool/" target="_blank"
+   rel="noopener nofollow noreferrer" >[1563616964]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="362-访问控制策略">3.6.2 访问控制策略</h4>
+<ul>
+<li><strong>建议</strong>：实施严格的访问控制策略</li>
+<li><strong>工具</strong>：使用CloudFlare的Firewall Rules功能阻止特定IP或国家的访问<a href="https://www.hostol.com/archives/577" target="_blank"
+   rel="noopener nofollow noreferrer" >[241905605]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="363-数据泄露防护">3.6.3 数据泄露防护</h4>
+<ul>
+<li><strong>风险</strong>：防止通过SaaS应用泄露敏感数据</li>
+<li><strong>工具</strong>：使用CloudFlare的CASB功能获得全面的可见性<a href="https://www.cloudflare.com/zh-cn/zero-trust/solutions/secure-saas-access/" target="_blank"
+   rel="noopener nofollow noreferrer" >[2382768412]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="364-影子it管理">3.6.4 影子IT管理</h4>
+<ul>
+<li><strong>问题</strong>：员工可能使用未经授权的SaaS应用</li>
+<li><strong>解决</strong>：使用CloudFlare SASE平台发现和管理所有应用使用<a href="https://www.cloudflare.com/zh-cn/zero-trust/solutions/secure-saas-access/" target="_blank"
+   rel="noopener nofollow noreferrer" >[2382768412]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h3 id="37-成本与合规性考虑">3.7 成本与合规性考虑</h3>
+<!-- raw HTML omitted -->
+<h4 id="371-域名成本">3.7.1 域名成本</h4>
+<ul>
+<li><strong>需求</strong>：需要至少两个域名：一个用于回源，一个用于访问</li>
+<li><strong>注意</strong>：回源域名需要托管在CloudFlare</li>
+</ul>
+<h4 id="372-证书成本">3.7.2 证书成本</h4>
+<ul>
+<li><strong>需求</strong>：回源域名需要有效的SSL证书</li>
+<li><strong>建议</strong>：可以使用Let&rsquo;s Encrypt等免费证书</li>
+</ul>
+<h4 id="373-超出免费额度的成本">3.7.3 超出免费额度的成本</h4>
+<ul>
+<li><strong>限制</strong>：超过100个自定义主机名需要付费</li>
+<li><strong>建议</strong>：评估业务规模选择合适的套餐</li>
+</ul>
+<h4 id="374-维护成本">3.7.4 维护成本</h4>
+<ul>
+<li><strong>需求</strong>：需要持续监测和更新优选IP</li>
+<li><strong>建议</strong>：可能需要开发或使用自动化脚本</li>
+</ul>
+<h4 id="375-合规性要求">3.7.5 合规性要求</h4>
+<ul>
+<li><strong>备案要求</strong>：如需备案，请按规定完成备案</li>
+<li><strong>内容合规</strong>：确保网站内容符合当地法律法规</li>
+<li><strong>服务条款</strong>：遵守CloudFlare服务条款</li>
+</ul>
+<h3 id="38-最佳实践总结">3.8 最佳实践总结</h3>
+<!-- raw HTML omitted -->
+<h4 id="381-域名规划策略">3.8.1 域名规划策略</h4>
+<ul>
+<li><strong>回源域名</strong>：托管在CloudFlare，用于回源</li>
+<li><strong>访问域名</strong>：不托管在CloudFlare，用于用户访问</li>
+<li><strong>优选域名</strong>：用于CNAME解析到优选IP</li>
+</ul>
+<h4 id="382-ssl配置优化">3.8.2 SSL配置优化</h4>
+<ul>
+<li><strong>源站配置</strong>：配置有效的SSL证书</li>
+<li><strong>CloudFlare设置</strong>：SSL设置为Full或Full(Strict)</li>
+<li><strong>定期更新</strong>：定期更新证书</li>
+</ul>
+<h4 id="383-缓存性能优化">3.8.3 缓存性能优化</h4>
+<ul>
+<li><strong>页面缓存</strong>：配置页面缓存规则</li>
+<li><strong>Always Online</strong>：启用Always Online功能</li>
+<li><strong>缓存时间</strong>：设置合理的缓存时间</li>
+</ul>
+<h4 id="384-监控维护体系">3.8.4 监控维护体系</h4>
+<ul>
+<li><strong>定期测试</strong>：使用CloudflareSpeedTest等工具定期测试优选IP</li>
+<li><strong>淘汰机制</strong>：建立IP淘汰和更新机制</li>
+<li><strong>性能监控</strong>：监控网站性能和访问日志</li>
+</ul>
+<h4 id="385-安全加固措施">3.8.5 安全加固措施</h4>
+<ul>
+<li><strong>WAF防护</strong>：启用WAF和DDoS防护</li>
+<li><strong>访问规则</strong>：配置访问规则和速率限制</li>
+<li><strong>安全审计</strong>：定期进行安全审计</li>
+</ul>
+<h3 id="39-工具推荐与资源">3.9 工具推荐与资源</h3>
+<!-- raw HTML omitted -->
+<h4 id="391-ip优选工具">3.9.1 IP优选工具</h4>
+<ul>
+<li><strong>CloudflareSpeedTest</strong>：测试CloudFlare CDN延迟和速度，获取最快IP<a href="https://github.com/XIU2/CloudflareSpeedTest" target="_blank"
+   rel="noopener nofollow noreferrer" >[1093528506]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li><strong>Better-cloudflare-ip</strong>：适合中国大陆用户的优选IP脚本<a href="https://blog.csdn.net/m0_52316372/article/details/148614339" target="_blank"
+   rel="noopener nofollow noreferrer" >[1341460165]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="392-监控工具">3.9.2 监控工具</h4>
+<ul>
+<li><strong>itdog</strong>：Ping测试和网络监测</li>
+<li><strong>vps789</strong>：三网24小时测速及淘汰机制<a href="https://www.vpsjxw.com/vps_use/cf_ip_tool/" target="_blank"
+   rel="noopener nofollow noreferrer" >[1563616964]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="393-自动化脚本">3.9.3 自动化脚本</h4>
+<ul>
+<li><strong>Python脚本</strong>：与CloudFlare优选节点实现智能CDN加速</li>
+<li><strong>DNSPod API</strong>：借助DNSPod等DNS服务商API动态更新解析记录<a href="https://blog.csdn.net/m0_52316372/article/details/148614339" target="_blank"
+   rel="noopener nofollow noreferrer" >[1341460165]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h2 id="四cloudflare优选ip--saas回源--tunnel组合实践方案">四、CloudFlare优选IP + SaaS回源 + Tunnel组合实践方案</h2>
+<h3 id="41-架构优势和适用场景">4.1 架构优势和适用场景</h3>
+<!-- raw HTML omitted -->
+<h4 id="411-核心优势">4.1.1 核心优势</h4>
+<ol>
+<li>
+<p><strong>安全性提升</strong>：</p>
+<ul>
+<li>完全隐藏源站IP地址，防止直接攻击</li>
+<li>无需开放公网端口，减少攻击面</li>
+<li>集成Cloudflare DDoS防护和WAF（Web应用程序防火墙）</li>
+<li>端到端加密隧道，防止数据泄露<a href="https://www.cloudflare-cn.com/products/tunnel/" target="_blank"
+   rel="noopener nofollow noreferrer" >[337775320]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+</li>
+<li>
+<p><strong>性能优化</strong>：</p>
+<ul>
+<li>通过优选IP/域名大幅提升中国大陆访问速度</li>
+<li>根据用户网络环境自动选择最优CDN节点</li>
+<li>减少延迟和连接失败率</li>
+</ul>
+</li>
+<li>
+<p><strong>部署灵活性</strong>：</p>
+<ul>
+<li>无需公网IP即可实现内网穿透</li>
+<li>支持任意基础设施（公有云、私有云、Kubernetes、本地服务器）</li>
+<li>免费版即可使用核心功能</li>
+</ul>
+</li>
+<li>
+<p><strong>成本效益</strong>：</p>
+<ul>
+<li>Cloudflare Tunnel免费提供基础功能</li>
+<li>SaaS回源功能免费可用</li>
+<li>无需额外购买CDN或安全服务</li>
+</ul>
+</li>
+</ol>
+<h4 id="412-适用场景">4.1.2 适用场景</h4>
+<p>这种组合架构特别适用于以下场景：</p>
+<ol>
+<li><strong>国内访问海外服务</strong>：需要在中国大陆快速访问部署在海外的网站或应用</li>
+<li><strong>内网应用暴露</strong>：将本地或私有网络中的应用安全地暴露到互联网</li>
+<li><strong>企业远程访问</strong>：为员工提供安全的远程访问内部系统的方式</li>
+<li><strong>个人项目部署</strong>：个人开发者或小团队部署项目，无需购买昂贵的基础设施</li>
+<li><strong>临时活动网站</strong>：需要快速部署且对安全性有要求的临时网站</li>
+</ol>
+<h3 id="42-完整配置步骤">4.2 完整配置步骤</h3>
+<!-- raw HTML omitted -->
+<h4 id="步骤1环境要求">步骤1：环境要求</h4>
+<ul>
+<li><strong>两个域名</strong>：主域名（如<code>example.com</code>）和加速域名（如<code>speedup.example.net</code>）</li>
+<li><strong>Cloudflare账号</strong>：至少一个，用于管理优选域名</li>
+<li><strong>服务器</strong>：运行内网服务的服务器，无需公网IP</li>
+<li><strong>DNS解析服务</strong>：支持分线路解析的DNS服务商（如腾讯云、阿里云、华为云）<a href="https://cloud.tencent.com/developer/article/2437958" target="_blank"
+   rel="noopener nofollow noreferrer" >[1363687326]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="步骤2安装cloudflare-tunnel">步骤2：安装Cloudflare Tunnel</h4>
+<p>在服务器上安装Cloudflare Tunnel客户端：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Linux系统安装</span>
+</span></span><span class="line"><span class="cl">wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+</span></span><span class="line"><span class="cl">chmod +x cloudflared-linux-amd64
+</span></span><span class="line"><span class="cl">sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证安装</span>
+</span></span><span class="line"><span class="cl">cloudflared --version</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h4 id="步骤3创建隧道并配置">步骤3：创建隧道并配置</h4>
+<ol>
+<li>登录Cloudflare Zero Trust控制台</li>
+<li>进入&quot;网络&quot; → &ldquo;Tunnels&rdquo; → &ldquo;创建隧道&rdquo;</li>
+<li>为隧道命名（如<code>my-tunnel</code>）</li>
+<li>复制生成的令牌</li>
+<li>在服务器上运行：<code>cloudflared tunnel login</code> 和 <code>cloudflared tunnel create my-tunnel</code></li>
+</ol>
+<h4 id="步骤4配置本地管理型隧道解决saas兼容性问题">步骤4：配置本地管理型隧道（解决SaaS兼容性问题）</h4>
+<p>由于Cloudflare Tunnel默认无法绑定不在Cloudflare托管的域名，需要使用本地管理型隧道<a href="https://blog.cosmiccat.net/2024/01/637/" target="_blank"
+   rel="noopener nofollow noreferrer" >[3156509386]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a>：</p>
+<p>创建配置文件<code>config.yml</code>：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>yaml
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">tunnel</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;your-tunnel-uuid&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">credentials-file</span><span class="p">:</span><span class="w"> </span><span class="l">/path/to/credentials.json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">ingress</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;fallback.example.com&#34;</span><span class="w">  </span><span class="c"># 回退源域名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">http://localhost:8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">originRequest</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">noTLSVerify</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;www.example.com&#34;</span><span class="w">  </span><span class="c"># 使用SaaS的域名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">http://localhost:8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">originRequest</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">noTLSVerify</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;*.example.com&#34;</span><span class="w">  </span><span class="c"># 通配符支持</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">http://localhost:8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">originRequest</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">noTLSVerify</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">http://localhost:8080 </span><span class="w"> </span><span class="c"># Catch-all规则</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">originRequest</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">noTLSVerify</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h4 id="步骤5配置saas回源">步骤5：配置SaaS回源</h4>
+<ol>
+<li>在加速域名控制台中，进入&quot;SSL/TLS&quot; → &ldquo;自定义主机名&rdquo;</li>
+<li>设置&quot;回退源&quot;为隧道域名（如<code>tunnel-origin.example.net</code>）</li>
+<li>添加自定义主机名（如<code>www.example.com</code>）</li>
+<li>选择TXT验证方式，获取验证值</li>
+</ol>
+<h4 id="步骤6配置dns记录">步骤6：配置DNS记录</h4>
+<p>在主域名DNS中配置：</p>
+<ol>
+<li>
+<p><strong>TXT记录</strong>：用于主机名验证</p>
+<ul>
+<li>名称：<code>_cf_custom_hostname</code></li>
+<li>内容：Cloudflare提供的验证值</li>
+<li>代理状态：关闭（灰色云朵）</li>
+</ul>
+</li>
+<li>
+<p><strong>CNAME记录</strong>：用于优选IP</p>
+<ul>
+<li>名称：<code>cdn</code> 或 <code>@</code></li>
+<li>目标：优选域名（如<code>www.visa.cn</code>）</li>
+<li>代理状态：关闭</li>
+</ul>
+</li>
+</ol>
+<h4 id="步骤7配置分线路解析">步骤7：配置分线路解析</h4>
+<p>在DNS服务商中设置分线路解析：</p>
+<ul>
+<li><strong>国内线路</strong>：CNAME指向优选域名/IP</li>
+<li><strong>国外线路</strong>：A记录指向<code>1.0.0.5</code>（Cloudflare境外IP）</li>
+<li><strong>默认线路</strong>：CNAME指向<code>cdn.example.com</code></li>
+</ul>
+<h4 id="步骤8dcv委派配置自动更新ssl证书">步骤8：DCV委派配置（自动更新SSL证书）</h4>
+<ol>
+<li>在加速域名控制台找到&quot;自定义主机名的DCV委派&quot;</li>
+<li>复制ACME DCV质询CNAME记录</li>
+<li>在主域名DNS中添加CNAME记录：
+<ul>
+<li>名称：<code>_acme-challenge.www</code></li>
+<li>目标：<code>.abcd.dcv.cfvalidation.com</code></li>
+<li>代理状态：关闭</li>
+</ul>
+</li>
+</ol>
+<h4 id="步骤9启动隧道">步骤9：启动隧道</h4>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动隧道</span>
+</span></span><span class="line"><span class="cl">cloudflared tunnel run my-tunnel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或作为服务运行</span>
+</span></span><span class="line"><span class="cl">cloudflared service install
+</span></span><span class="line"><span class="cl">systemctl start cloudflared</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="43-实际部署案例和最佳实践">4.3 实际部署案例和最佳实践</h3>
+<!-- raw HTML omitted -->
+<h4 id="案例1tech-shrimp个人博客">案例1：Tech-Shrimp个人博客</h4>
+<ul>
+<li><strong>主域名</strong>：<code>tech-shrimp.com</code></li>
+<li><strong>加速域名</strong>：<code>tech-shrimp.top</code></li>
+<li><strong>配置结果</strong>：平均访问时间从2.5秒降至1.04秒，失败节点大幅减少<a href="https://blog.csdn.net/techshrimp/article/details/144570093" target="_blank"
+   rel="noopener nofollow noreferrer" >[1350738681]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="案例2stefanzhang博客">案例2：StefanZhang博客</h4>
+<ul>
+<li><strong>主域名</strong>：<code>stefanzhang.com</code></li>
+<li><strong>自定义主机名</strong>：<code>blog.stefanzhang.cn</code></li>
+<li><strong>优选域名</strong>：<code>csgo.com</code>（或其他优化后的IP/域名）</li>
+<li><strong>配置特点</strong>：使用TXT验证，分线路解析<a href="https://blog.stefanzhang.com/457/" target="_blank"
+   rel="noopener nofollow noreferrer" >[2119988436]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="案例3winward-king内网服务">案例3：Winward King内网服务</h4>
+<ul>
+<li><strong>主域名</strong>：<code>nas.winward.com</code></li>
+<li><strong>加速域名</strong>：<code>speedupcf.123456.com</code></li>
+<li><strong>隧道域名</strong>：<code>speedupnas.123456.com</code></li>
+<li><strong>配置流程</strong>：完整的9步配置流程<a href="https://winward-king.github.io/2025/10/27/Network/01CFTunnelSass/index.html" target="_blank"
+   rel="noopener nofollow noreferrer" >[1880895383]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+<h4 id="最佳实践">最佳实践</h4>
+<ol>
+<li>
+<p><strong>域名选择</strong>：</p>
+<ul>
+<li>主域名选择易于记忆的.com域名</li>
+<li>加速域名可选择便宜的.top、.xyz等后缀</li>
+<li>确保两个域名都在可靠的DNS服务商管理</li>
+</ul>
+</li>
+<li>
+<p><strong>优选IP/域名策略</strong>：</p>
+<ul>
+<li><strong>官方IP</strong>：使用Cloudflare官方公布的IP地址范围</li>
+<li><strong>优选域名</strong>：使用知名网站域名如<code>www.visa.cn</code>、<code>www.gov.ua</code>等</li>
+<li><strong>网友提供</strong>：使用社区维护的优选域名如<code>yx.887141.xyz</code></li>
+<li><strong>自动化工具</strong>：使用XIU2/CloudflareSpeedTest等工具自动优选<a href="https://www.silverdragon.cn/archives/7484/" target="_blank"
+   rel="noopener nofollow noreferrer" >[715558479]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+</li>
+<li>
+<p><strong>监控和维护</strong>：</p>
+<ul>
+<li>定期检查隧道运行状态</li>
+<li>监控优选IP的性能变化</li>
+<li>设置自动化脚本定期更新优选IP</li>
+<li>使用vps789等监控工具实现24小时测速和淘汰机制<a href="https://www.nodeseek.com/post-191415-1" target="_blank"
+   rel="noopener nofollow noreferrer" >[2457654567]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+</li>
+<li>
+<p><strong>安全配置</strong>：</p>
+<ul>
+<li>在服务器防火墙中关闭所有不必要的端口</li>
+<li>定期更新cloudflared客户端</li>
+<li>监控Cloudflare控制台的安全事件</li>
+<li>启用Cloudflare的WAF规则</li>
+</ul>
+</li>
+</ol>
+<h3 id="44-性能提升和安全性优势">4.4 性能提升和安全性优势</h3>
+<!-- raw HTML omitted -->
+<h4 id="441-性能提升数据">4.4.1 性能提升数据</h4>
+<p>根据实际测试数据，这种组合架构能带来显著的性能提升：</p>
+<ol>
+<li>
+<p><strong>访问时间优化</strong>：</p>
+<ul>
+<li>未优化前：平均访问时间约2.5秒</li>
+<li>优选后：平均访问时间降至1.04秒</li>
+<li><strong>提升幅度</strong>：约58%的性能提升<a href="https://blog.csdn.net/techshrimp/article/details/144570093" target="_blank"
+   rel="noopener nofollow noreferrer" >[1350738681]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+</li>
+<li>
+<p><strong>连接稳定性</strong>：</p>
+<ul>
+<li>失败节点数量大幅减少</li>
+<li>出口节点数量从几个增加到30+个</li>
+<li>根据省份网络环境自动选择最优线路</li>
+</ul>
+</li>
+<li>
+<p><strong>带宽限制</strong>：</p>
+<ul>
+<li>Cloudflare Tunnel免费版有约1MB/s的带宽限制</li>
+<li>优选IP主要优化延迟，不改变带宽限制</li>
+<li>对于一般网站和应用，1MB/s带宽足够使用</li>
+</ul>
+</li>
+</ol>
+<h4 id="442-安全性优势">4.4.2 安全性优势</h4>
+<p>相比单纯SaaS回源，这种组合提供了更全面的安全保护：</p>
+<ol>
+<li>
+<p><strong>源站隐藏</strong>：</p>
+<ul>
+<li>Tunnel完全隐藏源站IP，防止直接攻击</li>
+<li>攻击者只能看到Cloudflare的IP地址</li>
+<li>即使DDoS攻击也无法到达源服务器<a href="https://www.cloudflare-cn.com/products/tunnel/" target="_blank"
+   rel="noopener nofollow noreferrer" >[337775320]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+</li>
+<li>
+<p><strong>零信任架构</strong>：</p>
+<ul>
+<li>集成Cloudflare Zero Trust平台</li>
+<li>支持基于身份和上下文的访问控制</li>
+<li>提供端到端加密通信</li>
+</ul>
+</li>
+<li>
+<p><strong>多层防护</strong>：</p>
+<ul>
+<li><strong>DDoS防护</strong>：自动缓解容量耗尽型攻击</li>
+<li><strong>WAF防护</strong>：Web应用程序防火墙保护</li>
+<li><strong>访问控制</strong>：基于ACL的精细权限管理</li>
+<li><strong>数据加密</strong>：传输中数据完全加密</li>
+</ul>
+</li>
+<li>
+<p><strong>攻击面减少</strong>：</p>
+<ul>
+<li>无需开放公网端口</li>
+<li>服务器防火墙可完全关闭入站连接</li>
+<li>所有流量通过加密隧道传输</li>
+</ul>
+</li>
+</ol>
+<h3 id="45-常见配置问题和调试方法">4.5 常见配置问题和调试方法</h3>
+<!-- raw HTML omitted -->
+<h4 id="问题1502-bad-gateway错误">问题1：502 Bad Gateway错误</h4>
+<ul>
+<li><strong>症状</strong>：浏览器显示502错误，但隧道控制台显示在线</li>
+<li><strong>原因</strong>：
+<ol>
+<li>本地服务未运行或端口错误</li>
+<li>Tunnel配置中service指向错误</li>
+<li>Nginx配置问题</li>
+</ol>
+</li>
+<li><strong>解决方案</strong>：
+<ol>
+<li>检查本地服务：<code>curl http://localhost:端口</code></li>
+<li>验证Tunnel配置中的service地址</li>
+<li>检查Nginx的server_name和root配置<a href="https://zhuanlan.zhihu.com/p/2013000876290234137" target="_blank"
+   rel="noopener nofollow noreferrer" >[560561172]<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ol>
+</li>
+</ul>
+<h4 id="问题2dns记录冲突">问题2：DNS记录冲突</h4>
+<ul>
+<li><strong>症状</strong>：添加路由时提示&quot;A, AAAA, or CNAME record already exists&quot;</li>
+<li><strong>原因</strong>：存在同名的DNS记录</li>
+<li><strong>解决方案</strong>：
+<ol>
+<li>删除同名的A记录或AAAA记录</li>
+<li>保留CNAME记录指向隧道</li>
+<li>等待DNS缓存更新</li>
+</ol>
+</li>
+</ul>
+<h4 id="问题3证书验证失败">问题3：证书验证失败</h4>
+<ul>
+<li><strong>症状</strong>：自定义主机名状态显示&quot;待验证&quot;或&quot;验证失败&quot;</li>
+<li><strong>原因</strong>：
+<ol>
+<li>TXT记录配置错误</li>
+<li>DNS传播延迟</li>
+<li>DCV委派配置问题</li>
+</ol>
+</li>
+<li><strong>解决方案</strong>：
+<ol>
+<li>仔细核对TXT记录的名称和内容</li>
+<li>等待5-10分钟让DNS传播</li>
+<li>检查DCV委派CNAME记录配置</li>
+</ol>
+</li>
+</ul>
+<h4 id="问题4隧道连接不稳定">问题4：隧道连接不稳定</h4>
+<ul>
+<li><strong>症状</strong>：隧道频繁断开重连，错误代码1033</li>
+<li><strong>原因</strong>：
+<ol>
+<li>网络不稳定</li>
+<li>服务器资源不足</li>
+<li>cloudflared版本过旧</li>
+</ol>
+</li>
+<li><strong>解决方案</strong>：
+<ol>
+<li>检查服务器网络连接</li>
+<li>监控服务器资源使用情况</li>
+<li>更新到最新版cloudflared</li>
+</ol>
+</li>
+</ul>
+<h4 id="调试方法和工具">调试方法和工具</h4>
+<ol>
+<li>
+<p><strong>查看详细日志</strong>：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看cloudflared详细日志</span>
+</span></span><span class="line"><span class="cl">cloudflared tunnel run my-tunnel --loglevel debug
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看系统服务日志</span>
+</span></span><span class="line"><span class="cl">journalctl -u cloudflared -f</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</li>
+<li>
+<p><strong>本地服务验证</strong>：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 验证本地HTTP服务</span>
+</span></span><span class="line"><span class="cl">curl -v http://localhost:8080
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证HTTPS服务（如有）</span>
+</span></span><span class="line"><span class="cl">curl -vk https://localhost:8443</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</li>
+<li>
+<p><strong>DNS解析检查</strong>：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查DNS解析</span>
+</span></span><span class="line"><span class="cl">dig www.example.com
+</span></span><span class="line"><span class="cl">nslookup www.example.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查TXT记录</span>
+</span></span><span class="line"><span class="cl">dig TXT _cf_custom_hostname.www.example.com</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</li>
+<li>
+<p><strong>网络连通性测试</strong>：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>bash
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 测试到Cloudflare边缘节点的连接</span>
+</span></span><span class="line"><span class="cl">ping www.visa.cn
+</span></span><span class="line"><span class="cl">traceroute www.visa.cn
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试隧道连接</span>
+</span></span><span class="line"><span class="cl">cloudflared tunnel info my-tunnel</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</li>
+<li>
+<p><strong>使用在线工具</strong>：</p>
+<ul>
+<li><strong>ITDog</strong>：<code>https://www.itdog.cn/http/</code> - 检查网站访问速度和可用性</li>
+<li><strong>Ping.pe</strong>：<code>https://ping.pe/</code> - 全球节点ping测试</li>
+<li><strong>DNS Checker</strong>：<code>https://dnschecker.org/</code> - DNS传播检查</li>
+</ul>
+</li>
+</ol>
+<h3 id="46-预防性措施和维护计划">4.6 预防性措施和维护计划</h3>
+<!-- raw HTML omitted -->
+<h4 id="定期维护">定期维护</h4>
+<ol>
+<li>
+<p><strong>每周检查</strong>：</p>
+<ul>
+<li>隧道运行状态</li>
+<li>网站访问日志</li>
+<li>性能监控数据</li>
+</ul>
+</li>
+<li>
+<p><strong>每月更新</strong>：</p>
+<ul>
+<li>优选IP列表</li>
+<li>Cloudflared客户端版本</li>
+<li>SSL证书状态</li>
+</ul>
+</li>
+<li>
+<p><strong>每季度审查</strong>：</p>
+<ul>
+<li>安全配置</li>
+<li>访问控制策略</li>
+<li>性能优化效果</li>
+</ul>
+</li>
+</ol>
+<h4 id="监控告警">监控告警</h4>
+<ol>
+<li>
+<p><strong>隧道状态监控</strong>：</p>
+<ul>
+<li>连接状态</li>
+<li>流量统计</li>
+<li>错误日志</li>
+</ul>
+</li>
+<li>
+<p><strong>性能阈值告警</strong>：</p>
+<ul>
+<li>访问延迟超过200ms</li>
+<li>失败率超过5%</li>
+<li>带宽使用超过80%</li>
+</ul>
+</li>
+<li>
+<p><strong>故障响应流程</strong>：</p>
+<ul>
+<li>问题诊断步骤</li>
+<li>快速恢复脚本</li>
+<li>备份恢复方案</li>
+</ul>
+</li>
+</ol>
+<h4 id="备份恢复">备份恢复</h4>
+<ol>
+<li>
+<p><strong>配置备份</strong>：</p>
+<ul>
+<li>Tunnel配置文件和凭证</li>
+<li>DNS记录配置</li>
+<li>SSL证书文件</li>
+</ul>
+</li>
+<li>
+<p><strong>快速恢复脚本</strong>：</p>
+<ul>
+<li>隧道重启脚本</li>
+<li>DNS更新脚本</li>
+<li>证书更新脚本</li>
+</ul>
+</li>
+<li>
+<p><strong>灾难恢复计划</strong>：</p>
+<ul>
+<li>备用服务器准备</li>
+<li>备用域名配置</li>
+<li>数据迁移方案</li>
+</ul>
+</li>
+</ol>
+<h2 id="总结">总结</h2>
+<p>通过CloudFlare+SaaS回源优选IP技术方案，可以实现以下核心价值：</p>
+<ol>
+<li><strong>国内高速访问</strong>：通过优选IP显著改善CloudFlare在国内的访问速度，解决免费版线路不佳的问题</li>
+<li><strong>全球CDN加速</strong>：利用CloudFlare全球边缘节点，为境外用户提供优质访问体验</li>
+<li><strong>安全防护</strong>：获得DDoS防护、WAF、SSL加密等企业级安全功能</li>
+<li><strong>成本优势</strong>：免费版即可使用，仅需支付域名费用，适合中小型网站和个人项目</li>
+</ol>
+<p><strong>CloudFlare优选IP + SaaS回源 + Tunnel组合架构</strong>进一步提升了方案的价值：</p>
+<ol>
+<li><strong>企业级安全</strong>：完全隐藏源站IP，无需开放公网端口，集成多层安全防护</li>
+<li><strong>部署灵活性</strong>：支持任意基础设施，无需公网IP即可实现内网穿透</li>
+<li><strong>性能优化</strong>：通过优选IP将国内访问延迟降低50%以上</li>
+<li><strong>运维简化</strong>：自动化监控和维护，降低运维复杂度</li>
+</ol>
+<p><strong>适用场景</strong>：</p>
+<ul>
+<li>面向国内用户的海外网站</li>
+<li>需要改善CloudFlare国内访问速度的场景</li>
+<li>不想备案但需要CDN加速的网站</li>
+<li>内网应用安全暴露到互联网</li>
+<li>企业远程访问内部系统</li>
+<li>技术爱好者学习CDN配置和网络优化</li>
+</ul>
+<p><strong>不适用场景</strong>：</p>
+<ul>
+<li>需要极高稳定性的商业网站（建议使用付费CDN）</li>
+<li>对延迟要求极高的实时应用</li>
+<li>需要国内备案的合规要求</li>
+<li>高带宽需求的视频流媒体服务</li>
+</ul>
+<p><strong>成功实施的关键</strong>：</p>
+<ol>
+<li>正确的域名规划和SSL配置</li>
+<li>持续的IP优选和监控维护</li>
+<li>合理的安全策略和性能优化</li>
+<li>对CloudFlare平台限制的充分了解</li>
+<li>完善的故障诊断和恢复机制</li>
+</ol>
+<p>通过遵循本报告提供的原理分析、操作步骤、注意事项和组合实践方案，技术团队可以成功实施CloudFlare+SaaS回源优选IP方案，显著提升国内用户访问海外网站的速度和体验，同时获得企业级的安全保护。</p>
+<hr>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li>[1] <a href="https://zhuanlan.zhihu.com/p/1916543236283016664" target="_blank"
+   rel="noopener nofollow noreferrer" >通过 Cloudflare SaaS 实现 ip 优选原理 - 知乎<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[2] <a href="https://www.xiaoa.me/archives/cfsaas.html" target="_blank"
+   rel="noopener nofollow noreferrer" >网站用上CloudFlare SaaS回源优选教程 - 半日闲<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[3] <a href="https://www.nodeseek.com/post-42661-1" target="_blank"
+   rel="noopener nofollow noreferrer" >⭐[Dooongの教程] 通过CloudFlare+SaaS回源优选IP使国内用户高速访问网站<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[4] <a href="https://www.silverdragon.cn/archives/7484/" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare SAAS 接入自选教程 - 应龙笔记<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[5] <a href="https://nicelee.top/blog/2024/07/26/cloudflare-better-ips/" target="_blank"
+   rel="noopener nofollow noreferrer" >【资源】关于Cloudflare CDN 优选IP - Nicelee 的小窝窝<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[6] <a href="https://www.taterli.com/7173" target="_blank"
+   rel="noopener nofollow noreferrer" >手动优选Cloudflare最快IP – 得到最快回源IP – TaterLi<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[7] <a href="https://www.yunjiasu.cc/1400.html" target="_blank"
+   rel="noopener nofollow noreferrer" >CloudflareIP使用任播（Anycast）技术为什么国内CDN没<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[8] <a href="https://developers.cloudflare.com/cloudflare-for-platforms/cloudflare-for-saas/start/getting-started/" target="_blank"
+   rel="noopener nofollow noreferrer" >Configuring Cloudflare for SaaS · Cloudflare for Platforms docs<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[9] <a href="https://winward-king.github.io/2025/10/27/Network/01CFTunnelSass/index.html" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare Tunnel访问加速|Saas回源 | Winward King&rsquo;s Blog<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1093528506] <a href="https://github.com/XIU2/CloudflareSpeedTest" target="_blank"
+   rel="noopener nofollow noreferrer" >GitHub - XIU2/CloudflareSpeedTest: 🌩「自选优选 IP」测试 &hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1123815918] <a href="https://vpsxb.net/6471/" target="_blank"
+   rel="noopener nofollow noreferrer" >[教程] 通过CloudFlare+SaaS回源优选IP使国内用户高速&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1137630196] <a href="https://www.moeelf.com/archives/305.html" target="_blank"
+   rel="noopener nofollow noreferrer" >CloudFlare for SaaS 官方免费CNAME接入/自定义节点（C&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1341460165] <a href="https://blog.csdn.net/m0_52316372/article/details/148614339" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare SaaS 功能 ip 优选原理_clouldflare优选ip-CSDN博客<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1350738681] <a href="https://blog.csdn.net/techshrimp/article/details/144570093" target="_blank"
+   rel="noopener nofollow noreferrer" >赛博大善人，高速内网穿透_回退源加速-CSDN博客<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1363687326] <a href="https://cloud.tencent.com/developer/article/2437958" target="_blank"
+   rel="noopener nofollow noreferrer" >网站用上CloudFlare SaaS回源优选教程-腾讯云开发者&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1563616964] <a href="https://www.vpsjxw.com/vps_use/cf_ip_tool/" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare优选IP工具，三网24小时测速及淘汰机制，&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1678942133] <a href="https://cloud.tencent.com/developer/article/2133923" target="_blank"
+   rel="noopener nofollow noreferrer" >CloudFlare workers.dev域名DNS污染 国内无法访问解决办&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[1880895383] <a href="https://winward-king.github.io/2025/10/27/Network/01CFTunnelSass/index.html" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare Tunnel访问加速|Saas回源 | Winward King&rsquo;s Blog<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[2016040518] <a href="https://zhichao.org/posts/416c7d" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare for SaaS 实现 CNAME 接入 CDN 支持国内外智能&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[2119988436] <a href="https://blog.stefanzhang.com/457/" target="_blank"
+   rel="noopener nofollow noreferrer" >【姿势】Cloudflare SaaS回源 提升网站国内加载速度<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[2382768412] <a href="https://www.cloudflare.com/zh-cn/zero-trust/solutions/secure-saas-access/" target="_blank"
+   rel="noopener nofollow noreferrer" >SaaS 安全 | Zero Trust | Cloudflare<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[241905605] <a href="https://www.hostol.com/archives/577" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare服务器安全指南 – DDoS防护与性能优化的&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[2457654567] <a href="https://www.nodeseek.com/post-191415-1" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare优选IP工具再升级，三网24小时测速及淘汰<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[293066963] <a href="https://zhuanlan.zhihu.com/p/652201511" target="_blank"
+   rel="noopener nofollow noreferrer" >网站被CloudFlare拖慢？来看解决方法 - 知乎<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[3156509386] <a href="https://blog.cosmiccat.net/2024/01/637/" target="_blank"
+   rel="noopener nofollow noreferrer" >使用CloudFlare SaaS的同时使用Cloudflare Tunnel – Cosmic Cat †<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[337775320] <a href="https://www.cloudflare-cn.com/products/tunnel/" target="_blank"
+   rel="noopener nofollow noreferrer" >Tunnel | Zero Trust 应用连接器 | Cloudflare<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[3526436489] <a href="https://github.com/dalaolala/blog/issues/46" target="_blank"
+   rel="noopener nofollow noreferrer" >CloudFlare通过SaaS免费使用CNAME接入域名解析 · Issue &hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[3825476853] <a href="https://yongwp.com/2068.html" target="_blank"
+   rel="noopener nofollow noreferrer" >针对使用Cloudflare CDN国内网站的速度优化方案-Word&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[560561172] <a href="https://zhuanlan.zhihu.com/p/2013000876290234137" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare Tunnel 内网穿透 故障全记录 一 - 知乎<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[623651029] <a href="https://www.74110.net/tutorial/linux/cloudflare-origin-rules/" target="_blank"
+   rel="noopener nofollow noreferrer" >通过Origin Rules使CloudFlare CDN回源以使用任意的端口&hellip;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+<li>[715558479] <a href="https://www.silverdragon.cn/archives/7484/" target="_blank"
+   rel="noopener nofollow noreferrer" >Cloudflare SAAS 接入自选教程 - 银龙笔记<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Hugo博客 Log-1</title>
+      <link>https://ximplez.github.io/topics/operates/build-gh-pages-1/</link>
+      <pubDate>Fri, 29 Nov 2024 16:47:33 +0800</pubDate>
+      <guid>https://ximplez.github.io/topics/operates/build-gh-pages-1/</guid>
+      <description>博客主题优化记录</description>
+      <content:encoded><![CDATA[<h1 id="简介">简介</h1>
+<p>本站使用Hugo搭建，主题fork了<a href="https://github.com/tofuwine/PaperMod-PE" target="_blank"
+   rel="noopener nofollow noreferrer" >PaperMod-PE<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a> (Forked from <a href="https://github.com/adityatelange/hugo-PaperMod" target="_blank"
+   rel="noopener nofollow noreferrer" >Hugo-PaperMod<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a>)， 是本站基于 PaperMod 主题修改后的开源版本。作者博客：<a href="https://www.tofuwine.cn" target="_blank"
+   rel="noopener nofollow noreferrer" >Tofuwine<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a></p>
+<p>最后本站主题开源地址：</p>
+
+
+
+
+    
+    
+    
+    
+    
+
+
+
+<div class="pe-git github">
+    <div class="pe-git-platform">
+        <div class="pe-loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="pe-git-info">
+        <div class="pe-git-repo-name">
+            ximplez/PaperMod-PE
+        </div>
+        <div class="pe-git-description"></div>
+        <div class="pe-git-extend">
+            <span class="pe-git-language"></span>
+            <div class="pe-git-count"></div>
+        </div>
+    </div>
+</div>
+
+<blockquote>
+<p>站点源码不开放主要是因为有部分个人信息不方便开源</p>
+</blockquote>
+<h2 id="优化左侧目录">优化左侧目录</h2>
+<p>原作者主题的左侧目录不能自适应屏幕宽度，当屏幕宽度过窄，目录就会被切出屏幕，且无法横向滑动屏幕来展示目录，体验不太好，因此参考<a href="https://github.com/JannikArndt/jannikarndt.github.io/commit/8b99f6cbc61c6b4f0238c592d5315cefe07c0599" target="_blank"
+   rel="noopener nofollow noreferrer" >toc优化<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" stroke-width="2">
+      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+      <path d="M11 13l9 -9"></path>
+      <path d="M15 4h5v5"></path>
+    </svg></a>进行了魔改，融合两个目录的特点，实现自适应屏幕和样式优化。</p>
+<h2 id="shortcode">Shortcode</h2>
+
+
+
+
+
+<div class="pe-tip warning">
+    记得在双括号内加 <code>&lt; &gt;</code>括起，否则不生效，以下代码块中无法加，否则会被渲染
+</div>
+
+<h3 id="引用">引用</h3>
+
+  
+  
+    
+      
+        <link rel="stylesheet" href="/css/style.min.fcd1e42510a012b60b7e1a476a3eeb05e37fb96bb54b3a4c236d5b37b0107791.css" integrity="sha256-/NHkJRCgErYLfhpHaj7rBeN/uWu1SzpMI21bN7AQd5E=" crossorigin="anonymous">
+      
+    
+  
+
+<blockquote class="quote">
+        <p>十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。</p></blockquote> 
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{quote}}
+</span></span><span class="line"><span class="cl">十里青山远，潮平路带沙。数声啼鸟怨年华。又是凄凉时候，在天涯。白露收残月，清风散晓霞。绿杨堤畔问荷花。记得年时沽酒，那人家。
+</span></span><span class="line"><span class="cl">{{/quote}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<h3 id="admonition提示">admonition提示</h3>
+<h4 id="success">success</h4>
+<div class="pe-details admonition success open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-check-circle fa-fw"
+           aria-hidden="true"></i>success<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - success</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{admonition type=success title=success open=true}}
+</span></span><span class="line"><span class="cl">admonition - success
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="note">note</h4>
+<div class="pe-details admonition note open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-pencil-alt fa-fw"
+           aria-hidden="true"></i>note<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - note</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{admonition type=note title=note open=true}}
+</span></span><span class="line"><span class="cl">admonition - note
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="abstract">abstract</h4>
+<div class="pe-details admonition abstract open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-list-ul fa-fw"
+           aria-hidden="true"></i>abstract<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - abstract</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=abstract title=abstract open=true }}
+</span></span><span class="line"><span class="cl">admonition - abstract
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="info">info</h4>
+<div class="pe-details admonition info open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-info-circle fa-fw"
+           aria-hidden="true"></i>info<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - info</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=info title=info open=true }}
+</span></span><span class="line"><span class="cl">admonition - info
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="tip">tip</h4>
+<div class="pe-details admonition tip open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-lightbulb fa-fw"
+           aria-hidden="true"></i>tip<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - tip</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=tip title=tip open=true }}
+</span></span><span class="line"><span class="cl">admonition - tip
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="question">question</h4>
+<div class="pe-details admonition question open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-question-circle fa-fw"
+           aria-hidden="true"></i>question<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - question</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=question title=question open=true }}
+</span></span><span class="line"><span class="cl">admonition - question
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="warning">warning</h4>
+<div class="pe-details admonition warning open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-exclamation-triangle fa-fw"
+           aria-hidden="true"></i>warning<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - warning</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=warning title=warning open=true }}
+</span></span><span class="line"><span class="cl">admonition - warning
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="failure">failure</h4>
+<div class="pe-details admonition failure open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-times-circle fa-fw"
+           aria-hidden="true"></i>failure<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - failure</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=failure title=failure open=true }}
+</span></span><span class="line"><span class="cl">admonition - failure
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="danger">danger</h4>
+<div class="pe-details admonition danger open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-skull-crossbones fa-fw"
+           aria-hidden="true"></i>danger<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - danger</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=danger title=danger open=true }}
+</span></span><span class="line"><span class="cl">admonition - danger
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="bug">bug</h4>
+<div class="pe-details admonition bug open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-bug fa-fw"
+           aria-hidden="true"></i>bug<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - bug</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=bug title=bug open=true }}
+</span></span><span class="line"><span class="cl">admonition - bug
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="example">example</h4>
+<div class="pe-details admonition example open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-list-ol fa-fw"
+           aria-hidden="true"></i>example<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - example</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=example title=example open=true }}
+</span></span><span class="line"><span class="cl">admonition - example
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h4 id="quote">quote</h4>
+<div class="pe-details admonition quote open">
+    <div class="pe-details-summary admonition-title">
+        <i class="icon fas fa-quote-right fa-fw"
+           aria-hidden="true"></i>quote<i class="pe-details-icon fas fa-angle-right fa-fw"
+                                                                           aria-hidden="true"></i>
+    </div>
+    <div class="pe-details-content">
+        <div class="admonition-content"><p>admonition - quote</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ admonition type=quote title=quote open=true }}
+</span></span><span class="line"><span class="cl">admonition - quote
+</span></span><span class="line"><span class="cl">{{/admonition}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+    </div>
+</div>
+<h3 id="tip提示">tip提示</h3>
+<h4 id="info-1">info</h4>
+
+
+
+
+
+<div class="pe-tip ">
+    <p>tip content</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{tip}}
+</span></span><span class="line"><span class="cl">tip content
+</span></span><span class="line"><span class="cl">{{/tip}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</div>
+
+<h4 id="warning-1">warning</h4>
+
+
+
+
+
+<div class="pe-tip warning">
+    <p>tip content</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{tip warning}}
+</span></span><span class="line"><span class="cl">tip content
+</span></span><span class="line"><span class="cl">{{/tip}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</div>
+
+<h3 id="badge徽章">badge徽章</h3>
+
+
+
+
+
+
+
+
+<span class="pe-badge">
+    <span class="pe-badge-key">
+        PaperMod-PE
+    </span>
+    <span class="pe-badge-value">
+        v1.0.4
+    </span>
+</span>
+
+
+
+
+
+
+
+
+
+<span class="pe-badge">
+    <span class="pe-badge-key">
+        ximplez
+    </span>
+    <span class="pe-badge-value">
+        building
+    </span>
+</span>
+
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>markdown
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{ badge &#34;PaperMod-PE&#34; &#34;v1.0.4&#34; }}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

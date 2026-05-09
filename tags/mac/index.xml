@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mac on ximplez</title>
+    <link>https://ximplez.github.io/tags/mac/</link>
+    <description>Recent content in Mac on ximplez</description>
+    <image>
+      <title>ximplez</title>
+      <url>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ximplez.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 05 Dec 2024 14:30:46 +0800</lastBuildDate>
+    <atom:link href="https://ximplez.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac技巧</title>
+      <link>https://ximplez.github.io/topics/notes/mac_trick/</link>
+      <pubDate>Wed, 27 Nov 2024 10:18:05 +0800</pubDate>
+      <guid>https://ximplez.github.io/topics/notes/mac_trick/</guid>
+      <description>记录个人使用心得</description>
+      <content:encoded><![CDATA[<h1 id="小技巧">小技巧</h1>
+<h2 id="日常使用">日常使用</h2>
+<ul>
+<li>
+<p>终端指定编辑器打开文件/文件夹（vscode为例）</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>shell
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">open /opt/homebrew/etc/nginx -a <span class="s1">&#39;Visual Studio Code&#39;</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<style type="text/css">
+     
+    .notice {
+        --title-color: #fff;
+        --title-background-color: #6be;
+        --content-color: #444;
+        --content-background-color: #e7f2fa;
+    }
+
+    .notice.info {
+        --title-background-color: #fb7;
+        --content-background-color: #fec;
+    }
+
+    .notice.tip {
+        --title-background-color: #5a5;
+        --content-background-color: #efe;
+    }
+
+    .notice.warning {
+        --title-background-color: #c33;
+        --content-background-color: #fee;
+    }
+
+     
+    @media (prefers-color-scheme:dark) {
+        .notice {
+            --title-color: #fff;
+            --title-background-color: #069;
+            --content-color: #ddd;
+            --content-background-color: #023;
+        }
+
+        .notice.info {
+            --title-background-color: #a50;
+            --content-background-color: #420;
+        }
+
+        .notice.tip {
+            --title-background-color: #363;
+            --content-background-color: #121;
+        }
+
+        .notice.warning {
+            --title-background-color: #800;
+            --content-background-color: #400;
+        }
+    }
+
+    body.dark .notice {
+        --title-color: #fff;
+        --title-background-color: #069;
+        --content-color: #ddd;
+        --content-background-color: #023;
+    }
+
+    body.dark .notice.info {
+        --title-background-color: #a50;
+        --content-background-color: #420;
+    }
+
+    body.dark .notice.tip {
+        --title-background-color: #363;
+        --content-background-color: #121;
+    }
+
+    body.dark .notice.warning {
+        --title-background-color: #800;
+        --content-background-color: #400;
+    }
+
+     
+    .notice {
+        padding: 18px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        color: var(--content-color);
+        background: var(--content-background-color);
+    }
+
+    .notice p:last-child {
+        margin-bottom: 0
+    }
+
+     
+    .notice-title {
+        margin: -18px -18px 12px;
+        padding: 4px 18px;
+        border-radius: 4px 4px 0 0;
+        font-weight: 700;
+        color: var(--title-color);
+        background: var(--title-background-color);
+    }
+
+     
+    .icon-notice {
+        display: inline-flex;
+        align-self: center;
+        margin-right: 8px;
+    }
+
+    .icon-notice img,
+    .icon-notice svg {
+        height: 1em;
+        width: 1em;
+        fill: currentColor;
+    }
+
+    .icon-notice img,
+    .icon-notice.baseline svg {
+        top: .125em;
+        position: relative;
+    }
+</style><div class="notice tip" >
+    <p class="notice-title">
+        <span class="icon-notice baseline">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="300.5 134 300 300">
+  <path d="M551.281 252.36c0-3.32-1.172-6.641-3.515-8.985l-17.774-17.578c-2.344-2.344-5.469-3.711-8.789-3.711-3.32 0-6.445 1.367-8.789 3.71l-79.687 79.493-44.141-44.14c-2.344-2.344-5.469-3.712-8.79-3.712-3.32 0-6.444 1.368-8.788 3.711l-17.774 17.579c-2.343 2.343-3.515 5.664-3.515 8.984 0 3.32 1.172 6.445 3.515 8.789l70.704 70.703c2.343 2.344 5.664 3.711 8.789 3.711 3.32 0 6.64-1.367 8.984-3.71l106.055-106.056c2.343-2.343 3.515-5.468 3.515-8.789ZM600.5 284c0 82.813-67.188 150-150 150-82.813 0-150-67.188-150-150 0-82.813 67.188-150 150-150 82.813 0 150 67.188 150 150Z"/>
+</svg>
+
+        </span>提示</p><p>针对vscode更便捷的方式：
+打开vscode命令<code>cmd+shift+p</code>，输入<code>shell</code>，选择<code>Install 'code' command in PATH</code>，就可以在path中自动安装code命令，之后就可以直接用code命令打开文件/文件夹</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>shell
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">code /opt/homebrew/etc/nginx</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div></div>
+
+</li>
+<li>
+<p>查看进程</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>shell
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ps -ef <span class="p">|</span> grep nginx</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+</li>
+<li>
+<p>查看端口占用</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>shell
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsof -i:8080：查看8080端口占用
+</span></span><span class="line"><span class="cl">lsof abc.txt：显示开启文件abc.txt的进程
+</span></span><span class="line"><span class="cl">lsof -c abc：显示abc进程现在打开的文件
+</span></span><span class="line"><span class="cl">lsof -c -p 1234：列出进程号为1234的进程所打开的文件
+</span></span><span class="line"><span class="cl">lsof -g gid：显示归属gid的进程情况
+</span></span><span class="line"><span class="cl">lsof +d /usr/local/：显示目录下被进程开启的文件
+</span></span><span class="line"><span class="cl">lsof +D /usr/local/：同上，但是会搜索目录下的目录，时间较长
+</span></span><span class="line"><span class="cl">lsof -d 4：显示使用fd为4的进程
+</span></span><span class="line"><span class="cl">lsof -i -U：显示所有打开的端口和UNIX domain文件</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<p><strong>netstat -tunlp</strong> 用于显示 tcp，udp 的端口和进程等相关情况。</p>
+<p>netstat 查看端口占用语法格式：</p>
+
+
+
+
+<div class="pe-code-block-wrap  pe-code-details   open  scrollable">
+    <div class="pe-code-block-header pe-code-details-summary">
+        <div class="pe-code-block-header-left">
+            
+            <i class="arrow fas fa-chevron-right fa-fw pe-code-details-icon" aria-hidden="true"></i>
+            
+            
+            <span>shell
+            </span>
+            
+        </div>
+        <div class="pe-code-block-header-center">
+            <span>
+            </span>
+        </div>
+        <div class="pe-code-block-header-right">
+            
+            <i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i>
+            
+            <button class="pe-code-copy-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="pe-icon"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pe-code-details-content scrollable">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">netstat -tunlp <span class="p">|</span> grep 端口号</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+<ul>
+<li>-t (tcp) 仅显示tcp相关选项</li>
+<li>-u (udp)仅显示udp相关选项</li>
+<li>-n 拒绝显示别名，能显示数字的全部转化为数字l</li>
+<li>-l 仅列出在Listen(监听)的服务状态</li>
+<li>-p 显示建立相关链接的程序名</li>
+</ul>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
